@@ -1,0 +1,26 @@
+[
+  {
+    "number": "01",
+    "title": "Firewall & VPN",
+    "details": "Blocks infected website tracking programs and annoying.",
+    "image": "/assets/img/icons/serv_icons/36.png"
+  },
+  {
+    "number": "02",
+    "title": "Live Security",
+    "details": "Blocks infected website tracking programs and annoying.",
+    "image": "/assets/img/icons/serv_icons/37.png"
+  },
+  {
+    "number": "03",
+    "title": "Hack Protection",
+    "details": "Blocks infected website tracking programs and annoying.",
+    "image": "/assets/img/icons/serv_icons/38.png"
+  },
+  {
+    "number": "04",
+    "title": "24/7 Online Support",
+    "details": "Blocks infected website tracking programs and annoying.",
+    "image": "/assets/img/icons/serv_icons/39.png"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/assets/img/projects/11.jpg",
+    "tag": "Analysis",
+    "logo": "/assets/img/logos/22.png",
+    "title": "Hayden Co. Market Data Analysis",
+    "text": "Stay focused and productive with a clean and clutter-free note space the flexible ways to organize. Everything melancholy uncommonly but solicitude.",
+    "client": {
+      "name": "Miranda H. Halim",
+      "budget": "$12,000",
+      "estimate": "3 Months"
+    }
+  },
+  {
+    "image": "/assets/img/projects/6.png",
+    "tag": "Analysis",
+    "logo": "/assets/img/logos/22.png",
+    "title": "Hayden Co. Market Data Analysis",
+    "text": "Stay focused and productive with a clean and clutter-free note space the flexible ways to organize. Everything melancholy uncommonly but solicitude.",
+    "client": {
+      "name": "Miranda H. Halim",
+      "budget": "$12,000",
+      "estimate": "3 Months"
+    }
+  },
+  {
+    "image": "/assets/img/projects/4.png",
+    "tag": "Analysis",
+    "logo": "/assets/img/logos/22.png",
+    "title": "Hayden Co. Market Data Analysis",
+    "text": "Stay focused and productive with a clean and clutter-free note space the flexible ways to organize. Everything melancholy uncommonly but solicitude.",
+    "client": {
+      "name": "Miranda H. Halim",
+      "budget": "$12,000",
+      "estimate": "3 Months"
+    }
+  }
+]

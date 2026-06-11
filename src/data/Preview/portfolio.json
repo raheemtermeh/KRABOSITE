@@ -1,0 +1,20 @@
+{
+  "st1": [
+    "/landing-preview/img/header/1.jpg",
+    "/landing-preview/img/header/2.jpg",
+    "/landing-preview/img/header/3.jpg",
+    "/landing-preview/img/header/4.jpg",
+    "/landing-preview/img/header/5.jpg",
+    "/landing-preview/img/header/6.jpg",
+    "/landing-preview/img/header/7.jpg"
+  ],
+  "st2": [
+    "/landing-preview/img/header/8.jpg",
+    "/landing-preview/img/header/9.jpg",
+    "/landing-preview/img/header/11.jpg",
+    "/landing-preview/img/header/13.jpg",
+    "/landing-preview/img/header/12.jpg",
+    "/landing-preview/img/header/10.jpg",
+    "/landing-preview/img/header/14.jpg"
+  ]
+}

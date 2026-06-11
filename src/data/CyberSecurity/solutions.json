@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Automotive",
+    "image": "/assets/img/icons/solution/1.png"
+  },
+  {
+    "title": "Communications",
+    "image": "/assets/img/icons/solution/2.png"
+  },
+  {
+    "title": "Constructions",
+    "image": "/assets/img/icons/solution/3.png"
+  },
+  {
+    "title": "Govt. Education",
+    "image": "/assets/img/icons/solution/4.png"
+  },
+  {
+    "title": "Energy & Power",
+    "image": "/assets/img/icons/solution/5.png"
+  },
+  {
+    "title": "Financial Service",
+    "image": "/assets/img/icons/solution/6.png"
+  },
+  {
+    "title": "Food & Beverage",
+    "image": "/assets/img/icons/solution/7.png"
+  },
+  {
+    "title": "Life Science",
+    "image": "/assets/img/icons/solution/8.png"
+  },
+  {
+    "title": "Media & Entertainment",
+    "image": "/assets/img/icons/solution/9.png"
+  },
+  {
+    "title": "Travel Agency",
+    "image": "/assets/img/icons/solution/10.png"
+  },
+  {
+    "title": "Public Safety",
+    "image": "/assets/img/icons/solution/11.png"
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "link": "/home-app-landing",
+    "img": "/landing-preview/img/demos/1_1.png",
+    "title": "Creative",
+    "type": "App Landing"
+  },
+  {
+    "link": "/home-digital-agency",
+    "img": "/landing-preview/img/demos/2_2.png",
+    "title": "Corporate",
+    "type": "Digital Agency",
+    "isFeatured": true
+  },
+  {
+    "link": "/home-marketing-startup",
+    "img": "/landing-preview/img/demos/3_3.png",
+    "title": "Corporate",
+    "type": "Marketing Startup"
+  },
+  {
+    "link": "/home-saas-technology",
+    "img": "/landing-preview/img/demos/4_4.png",
+    "title": "Software",
+    "type": "Saas Technology"
+  },
+  {
+    "link": "/home-software-company",
+    "img": "/landing-preview/img/demos/5_5.png",
+    "title": "Technology",
+    "type": "Software company"
+  },
+  {
+    "link": "/home-it-solutions",
+    "img": "/landing-preview/img/demos/6_6.png",
+    "title": "Business",
+    "type": "IT Solution"
+  },
+  {
+    "link": "/home-it-solutions2",
+    "img": "/landing-preview/img/demos/7_7.png",
+    "title": "Creative (new)",
+    "type": "Creative IT Solutions",
+    "isNew": true
+  },
+  {
+    "link": "/home-data-analysis",
+    "img": "/landing-preview/img/demos/8_8.png",
+    "title": "Scince (New)",
+    "type": "Data Analysis",
+    "isNew": true
+  },
+  {
+    "link": "/home-cloud-hosting",
+    "img": "/landing-preview/img/demos/9_9.png",
+    "title": "Business (New)",
+    "type": "Hosting Cloud",
+    "isNew": true
+  },
+  {
+    "link": "/home-cyber-security",
+    "img": "/landing-preview/img/demos/10.jpg",
+    "title": "Business (New)",
+    "type": "Cyber Security",
+    "isArrived": true
+  },
+  {
+    "link": "/home-help-desk",
+    "img": "/landing-preview/img/demos/11.jpg",
+    "title": "Business (New)",
+    "type": "Help Desk",
+    "isArrived": true
+  },
+  {
+    "link": "/home-nft-marketplace",
+    "img": "/landing-preview/img/demos/13.jpg",
+    "title": "Business (New)",
+    "type": "NFT Market",
+    "isArrived": true
+  },
+  {
+    "link": "/home-freelance-personal",
+    "img": "/landing-preview/img/demos/14.jpg",
+    "title": "Business (New)",
+    "type": "Personal Portfolio",
+    "isArrived": true
+  },
+  {
+    "link": "/home-payment-solutions",
+    "img": "/landing-preview/img/demos/15.jpg",
+    "title": "Business (New)",
+    "type": "Payment Solution",
+    "isArrived": true
+  },
+  {
+    "link": "/home-crypto",
+    "img": "/landing-preview/img/demos/16.jpg",
+    "title": "Business (New)",
+    "type": "Crypto Currency",
+    "isArrived": true
+  },
+  {
+    "link": "/rtl-page-shop",
+    "img": "/landing-preview/img/demos/12.png",
+    "title": "ECommerce",
+    "type": "Modern Shop"
+  },
+  {
+    "link": "/rtl-home-marketing-startup",
+    "img": "/landing-preview/img/demos/7.jpg",
+    "title": "عربي وفارسي",
+    "type": "RTL Support"
+  },
+  {
+    "link": "/rtl-home-marketing-startup",
+    "img": "/landing-preview/img/demos/8.jpg",
+    "title": "عربي وفارسي",
+    "type": "Modern Shop RTL"
+  }
+]

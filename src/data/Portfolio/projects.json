@@ -1,0 +1,85 @@
+{
+  "filters": [
+    { "title": "All", "filter": "all" },
+    { "title": "IT Consultation", "filter": ".consultation" },
+    { "title": "Data Security", "filter": ".security" },
+    { "title": "Website Development", "filter": ".website" },
+    { "title": "UI/UX Design", "filter": ".design" },
+    { "title": "Cloud Service", "filter": ".cloud" },
+    { "title": "Game Development", "filter": ".development" }
+  ],
+  "projects": [
+    {
+      "filter": "security consultation",
+      "image": "/assets/img/projects/prog/1.jpeg",
+      "title": "Infrastructure Upgrade",
+      "type": "IT Consultation",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["Consultation", "Management"]
+    },
+    {
+      "filter": "design security",
+      "image": "/assets/img/projects/prog/2.png",
+      "title": "Criftocy Landing Page",
+      "type": "Website Development, UI/UX Design",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+    },
+    {
+      "filter": "website development",
+      "image": "/assets/img/projects/prog/3.jpeg",
+      "title": "AR/VR War 1986 Game",
+      "type": "Game Developemnt",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["VR/AR", "iOS & Android", "Unity 2D/3D"]
+    },
+    {
+      "filter": "cloud design",
+      "image": "/assets/img/projects/4.png",
+      "title": "Okpay E-Wallet Optimized",
+      "type": "SEO analysis",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["SEO Analysis", "Content Strategy"]
+    },
+    {
+      "filter": "website development cloud",
+      "image": "/assets/img/projects/5.png",
+      "title": "e-Commerce Dashboard",
+      "type": "website design & develoment",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+    },
+    {
+      "filter": "design consultation",
+      "image": "/assets/img/projects/7.png",
+      "title": "Crypto Blockchain",
+      "type": "Data security",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["Security", "Management", "Backup & Recovery"]
+    },
+    {
+      "filter": "cloud design",
+      "image": "/assets/img/projects/1.png",
+      "title": "Car Rental Dashboard",
+      "type": "UI/UX Design",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["HTML/CSS", "Figma"]
+    },
+    {
+      "filter": "security cloud",
+      "image": "/assets/img/projects/2.png",
+      "title": "Encrypt Blockchain",
+      "type": "Data security, it consultation",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["Data Security", "Python", "Data Backup"]
+    },
+    {
+      "filter": "development consultation",
+      "image": "/assets/img/projects/6.png",
+      "title": "Robotchat AI Development",
+      "type": "machine learning",
+      "details": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+      "tags": ["AI", "Machine Learning"]
+    }
+  ]
+}

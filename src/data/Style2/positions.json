@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Product Designer",
+    "description": "We’re looking for a mid-level product designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "Wesite Developer",
+    "description": "We’re looking for a Senior Website Developer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k",
+    "trend": true
+  },
+  {
+    "title": "Game Developer",
+    "description": "We’re looking for a rockstar Pro Game Developer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "UI & UX Designer",
+    "description": "We’re looking for a Super Kicks Junior UI & UX Designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "Content Writer",
+    "description": "We’re looking for a mid-level Content Writer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "iOs App Developer",
+    "description": "We’re looking for a mid-level Android & iOs App Developer to join",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  }
+]

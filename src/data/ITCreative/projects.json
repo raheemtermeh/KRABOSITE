@@ -1,0 +1,76 @@
+{
+  "types": [
+    {
+      "id": 1,
+      "title": "Website Design",
+      "tab": 1
+    },
+    {
+      "id": 2,
+      "title": "UI UX Design",
+      "tab": 2
+    },
+    {
+      "id": 3,
+      "title": "Branding Design",
+      "tab": 1
+    },
+    {
+      "id": 4,
+      "title": "Game Design",
+      "tab": 2
+    }
+  ],
+  "tabs": [
+    {
+      "id": 1,
+      "projects": [
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/8.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/9.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/8.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/9.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projects": [
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/9.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/8.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/9.png"
+        },
+        {
+          "title": "UI & UX, Website",
+          "description": "Protogus Website UIX Design",
+          "image": "/assets/img/projects/8.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "image": "/assets/img/team/1.jpeg",
+    "category": "Product Quality",
+    "content": "You can even sent emails to every note and gather all of the thing you need in a single place.",
+    "author": {
+      "name": "Rosalina D. William",
+      "position": "CEO At Brator"
+    }
+  },
+  {
+    "image": "/assets/img/team/2.jpeg",
+    "category": "Product Quality",
+    "content": "User feedback is qualitative & quantitative data from customers on their likes, dislikes.",
+    "author": {
+      "name": "Miranda H. Halim",
+      "position": "CEO At Brator"
+    }
+  },
+  {
+    "image": "/assets/img/team/3.jpeg",
+    "category": "Product Quality",
+    "content": "Impressions, and requests about a product. Collecting and making sense of user feedback is critical.",
+    "author": {
+      "name": "Dekson P. Pablo",
+      "position": "CEO At Brator"
+    }
+  }
+]

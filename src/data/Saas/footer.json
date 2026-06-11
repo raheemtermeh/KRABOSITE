@@ -1,0 +1,23 @@
+{
+  "address": {
+    "address1": "223 Thatcher Road St, Brookly,",
+    "address2": "Manhattan, NY 10463, US"
+  },
+  "phone": "+031 5689 89 98",
+  "email": "contact@Itecksolution.co",
+  "usefulLinks": [
+    { "link": "/home-saas-technology", "title": "Home" },
+    { "link": "/page-about-5", "title": "About Iteck" },
+    { "link": "/page-portfolio-5", "title": "Projects" },
+    { "link": "/page-product-5", "title": "product" },
+    { "link": "/page-blog-5", "title": "Blog" },
+    { "link": "/page-contact-5", "title": "Contact" }
+  ],
+  "resources": [
+    { "link": "#", "title": "Online Documentation" },
+    { "link": "#", "title": "Roadmap" },
+    { "link": "#", "title": "Intergrations" },
+    { "link": "#", "title": "FAQs" },
+    { "link": "#", "title": "Help Center" }
+  ]
+}

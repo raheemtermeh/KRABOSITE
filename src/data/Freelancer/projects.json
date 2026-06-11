@@ -1,0 +1,86 @@
+{
+  "linkTabs": [
+    {
+      "id": "prj1",
+      "tab": "prj1",
+      "control": "pills-home",
+      "name": "All Works"
+    },
+    {
+      "id": "prj2",
+      "tab": "prj2",
+      "control": "pills-profile",
+      "name": "website"
+    },
+    {
+      "id": "prj3",
+      "tab": "prj1",
+      "control": "pills-contact",
+      "name": "mobile app"
+    },
+    {
+      "id": "prj4",
+      "tab": "prj2",
+      "control": "pills-contact",
+      "name": "game design"
+    },
+    {
+      "id": "prj5",
+      "tab": "prj1",
+      "control": "pills-contact",
+      "name": "Interior"
+    }
+  ],
+  "tabContent": [
+    {
+      "id": "prj1",
+      "slides": [
+        {
+          "image": "/assets/img/projects/11.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/12.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/13.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/14.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        }
+      ]
+    },
+    {
+      "id": "prj2",
+      "slides": [
+        {
+          "image": "/assets/img/projects/11.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/12.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/13.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        },
+        {
+          "image": "/assets/img/projects/14.png",
+          "subTitle": "App, UX, Design",
+          "title": "Hemera iOs App Design"
+        }
+      ]
+    }
+  ]
+}

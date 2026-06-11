@@ -1,0 +1,30 @@
+[
+  {
+    "image": "/assets/img/projects/4.png",
+    "title": "Okpay E-Wallet Optimized",
+    "type": ["SEO analysis"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["SEO Analysis", "Content Strategy"]
+  },
+  {
+    "image": "/assets/img/projects/5.png",
+    "title": "e-Commerce Dashboard",
+    "type": ["website design", "develoment"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+  },
+  {
+    "image": "/assets/img/projects/7.png",
+    "title": "MLB Store Instagram",
+    "type": ["social media"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Social", "Instagram", "Followers"]
+  },
+  {
+    "image": "/assets/img/projects/5.png",
+    "title": "e-Commerce Dashboard",
+    "type": ["website design", "develoment"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+  }
+]

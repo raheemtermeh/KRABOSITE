@@ -1,0 +1,32 @@
+[
+  {
+    "image": "/assets/img/icons/pr1.png",
+    "title": "Personal",
+    "price": "9.99",
+    "features": [
+      "3 PRojects",
+      "6 Months support"
+    ]
+  },
+  {
+    "image": "/assets/img/icons/pr2.png",
+    "title": "small team",
+    "price": "19.50",
+    "features": [
+      "15 PRojects",
+      "12 Months support",
+      "seo & marketing"
+    ],
+    "recommended": true
+  },
+  {
+    "image": "/assets/img/icons/pr3.png",
+    "title": "enterprise",
+    "price": "29.99",
+    "features": [
+      "unlimited PRojects",
+      "lifetime support",
+      "expert consultation"
+    ]
+  }
+]

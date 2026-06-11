@@ -1,0 +1,23 @@
+[
+  {
+    "image": "/assets/img/icons/ch1.png",
+    "title": "Affordable Price",
+    "desc": {
+      "desc1": "Nanotechnology immersion along the information high",
+      "desc2": "will close the loop on focusing solely"
+    }
+  },
+  {
+    "image": "/assets/img/icons/ch2.png",
+    "title": "Top-notch Experts Consulting",
+    "desc": {
+      "desc1": "Our top-notch Experts with much years of experience",
+      "desc2": "certail will give best solutions for your business"
+    }
+  },
+  {
+    "image": "/assets/img/icons/ch3.png",
+    "title": "Dedicated Support 24/7",
+    "desc": "Customer support is always our number one priority."
+  }
+]

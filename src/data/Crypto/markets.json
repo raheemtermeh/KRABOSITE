@@ -1,0 +1,86 @@
+[
+  {
+    "paymentIcon": "/assets/img/icons/payment/1.png",
+    "from": "BTC",
+    "to": "USDT",
+    "price": "19,274.26",
+    "lastDayChange": {
+      "operator": "+",
+      "change": "0.01"
+    },
+    "lastDayPrice": {
+      "dollar": "59,846,075.84",
+      "crypto": "3,105 BTC"
+    }
+  },
+  {
+    "paymentIcon": "/assets/img/icons/payment/2.png",
+    "from": "ETH",
+    "to": "USDT",
+    "price": "1,311.23",
+    "lastDayChange": {
+      "operator": "-",
+      "change": "1.25"
+    },
+    "lastDayPrice": {
+      "dollar": "23,679,377.33",
+      "crypto": "18,059 ETH"
+    }
+  },
+  {
+    "paymentIcon": "/assets/img/icons/payment/3.png",
+    "from": "CRO",
+    "to": "USDT",
+    "price": "0.111730",
+    "lastDayChange": {
+      "operator": "+",
+      "change": "0.81"
+    },
+    "lastDayPrice": {
+      "dollar": "59,846,075.84",
+      "crypto": "3,105 cro"
+    }
+  },
+  {
+    "paymentIcon": "/assets/img/icons/payment/4.png",
+    "from": "SOL",
+    "to": "USDT",
+    "price": "19,274.26",
+    "lastDayChange": {
+      "operator": "-",
+      "change": "0.19"
+    },
+    "lastDayPrice": {
+      "dollar": "23,679,377.33",
+      "crypto": "18,059 SOL"
+    }
+  },
+  {
+    "paymentIcon": "/assets/img/icons/payment/5.png",
+    "from": "BICI",
+    "to": "USDT",
+    "price": "1,311.23",
+    "lastDayChange": {
+      "operator": "-",
+      "change": "0.33"
+    },
+    "lastDayPrice": {
+      "dollar": "23,679,377.33",
+      "crypto": "18,059 BICI"
+    }
+  },
+  {
+    "paymentIcon": "/assets/img/icons/payment/6.png",
+    "from": "DOT",
+    "to": "USDT",
+    "price": "19,274.26",
+    "lastDayChange": {
+      "operator": "+",
+      "change": "1.00"
+    },
+    "lastDayPrice": {
+      "dollar": "23,679,377.33",
+      "crypto": "18,059 DOT"
+    }
+  }
+]

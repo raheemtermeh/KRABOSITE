@@ -1,0 +1,29 @@
+{
+  "tablist": [
+    {
+      "id": "abt1-tab",
+      "tab_id": "abt1",
+      "text": "Our Mission"
+    },
+    {
+      "id": "abt2-tab",
+      "tab_id": "abt2",
+      "text": "Our vision"
+    },
+    {
+      "id": "abt3-tab",
+      "tab_id": "abt1",
+      "text": "Our Goal"
+    }
+  ],
+  "tabpanels": [
+    {
+      "id": "abt1",
+      "text": "The uploading and updating processes made by suppliers can be streamlined through front-end dashboards that create better ease of access."
+    },
+    {
+      "id": "abt2",
+      "text": "The uploading and updating processes made by suppliers can be streamlined through front-end dashboards that create better ease of access."
+    }
+  ]
+}

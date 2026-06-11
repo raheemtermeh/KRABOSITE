@@ -1,0 +1,131 @@
+[
+  {
+    "link": "/page-about-5",
+    "img": "/landing-preview/img/inner_pages/about.png",
+    "title": "Inner Page",
+    "type": "About us 1"
+  },
+  {
+    "link": "/page-about-2",
+    "img": "/landing-preview/img/inner_pages/about2.png",
+    "title": "Inner Page",
+    "type": "About us 2"
+  },
+  {
+    "link": "/page-about-app",
+    "img": "/landing-preview/img/inner_pages/about_app.png",
+    "title": "Inner Page",
+    "type": "About us 3"
+  },
+  {
+    "link": "/page-services-5",
+    "img": "/landing-preview/img/inner_pages/services.png",
+    "title": "Inner Page",
+    "type": "Services one"
+  },
+  {
+    "link": "/page-services-app",
+    "img": "/landing-preview/img/inner_pages/services_app.png",
+    "title": "Inner Page",
+    "type": "Services two"
+  },
+  {
+    "link": "/page-services-details-5",
+    "img": "/landing-preview/img/inner_pages/services_details.png",
+    "title": "Inner Page",
+    "type": "Services details"
+  },
+  {
+    "link": "/page-careers-5",
+    "img": "/landing-preview/img/inner_pages/career.png",
+    "title": "Inner Page",
+    "type": "Careers"
+  },
+  {
+    "link": "/page-career-details",
+    "img": "/landing-preview/img/inner_pages/career_details.png",
+    "title": "Inner Page",
+    "type": "Career details"
+  },
+  {
+    "link": "/page-contact-5",
+    "img": "/landing-preview/img/inner_pages/contact.png",
+    "title": "Inner Page",
+    "type": "Contact"
+  },
+  {
+    "link": "/page-portfolio-5",
+    "img": "/landing-preview/img/inner_pages/projects.png",
+    "title": "Inner Page",
+    "type": "portfolio"
+  },
+  {
+    "link": "/page-single-project-5",
+    "img": "/landing-preview/img/inner_pages/single_project.png",
+    "title": "Inner Page",
+    "type": "single project"
+  },
+  {
+    "link": "/page-faq-5",
+    "img": "/landing-preview/img/inner_pages/faq.png",
+    "title": "Inner Page",
+    "type": "faq"
+  },
+  {
+    "link": "/page-sign-in",
+    "img": "/landing-preview/img/inner_pages/login.png",
+    "title": "Inner Page",
+    "type": "sign in"
+  },
+  {
+    "link": "/page-comming-soon-5",
+    "img": "/landing-preview/img/inner_pages/comming_soon.png",
+    "title": "Inner Page",
+    "type": "comming soon"
+  },
+  {
+    "link": "/page-404",
+    "img": "/landing-preview/img/inner_pages/404.png",
+    "title": "Inner Page",
+    "type": "404"
+  },
+  {
+    "link": "/page-blog-app-left-sidebar",
+    "img": "/landing-preview/img/inner_pages/blog_app_left_sidebar.png",
+    "title": "Inner Page",
+    "type": "blog app left sidebar"
+  },
+  {
+    "link": "/page-blog-5-left-sidebar",
+    "img": "/landing-preview/img/inner_pages/blog_left_sidebar.png",
+    "title": "Inner Page",
+    "type": "blog left sidebar"
+  },
+  {
+    "link": "/page-single-post-5",
+    "img": "/landing-preview/img/inner_pages/single_post_right_sidebar.png",
+    "title": "Inner Page",
+    "type": "single post right sidebar"
+  },
+  {
+    "link": "/#0",
+    "img": "/landing-preview/img/demos/9.jpg",
+    "title": "upcoming",
+    "type": "Inner Page (Coming)",
+    "isComingSoon": true
+  },
+  {
+    "link": "/#0",
+    "img": "/landing-preview/img/demos/9.jpg",
+    "title": "upcoming",
+    "type": "Inner Page (Coming)",
+    "isComingSoon": true
+  },
+  {
+    "link": "/#0",
+    "img": "/landing-preview/img/demos/0.png",
+    "title": "upcoming",
+    "type": "Inner Page (Coming)",
+    "isComingSoon": true
+  }
+]

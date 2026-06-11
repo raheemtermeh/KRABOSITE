@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Personal Plan",
+    "description": "Customized anything in anytime",
+    "price": "49.00",
+    "features": [
+      "Easy To Track AI Data",
+      "100+ Ready Boots",
+      "Best Data Plan & Package",
+      "24/7 Online Support"
+    ]
+  },
+  {
+    "head": "popular deal: 50% offer",
+    "title": "Advanced",
+    "description": "Customized anything in anytime",
+    "price": "49.00",
+    "features": [
+      "Easy To Track AI Data",
+      "100+ Ready Boots",
+      "Best Data Plan & Package",
+      "24/7 Online Support"
+    ]
+  },
+  {
+    "title": "For Team",
+    "description": "Customized anything in anytime",
+    "price": "49.00",
+    "features": [
+      "Easy To Track AI Data",
+      "100+ Ready Boots",
+      "Best Data Plan & Package",
+      "24/7 Online Support"
+    ]
+  }
+]

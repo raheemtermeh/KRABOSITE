@@ -1,0 +1,156 @@
+[
+  {
+    "title": "basic",
+    "price": {
+      "monthly": "Free",
+      "yearly": "Free"
+    },
+    "short_description": "Free forever.!",
+    "description": "No credit card required.",
+    "features": [
+      {
+        "title": "Unlimited Projects",
+        "checked": true
+      },
+      {
+        "title": "Lifetime Support & SEO Experts Consult",
+        "checked": true
+      },
+      {
+        "title": "Advance Dashboard",
+        "checked": true
+      },
+      {
+        "title": "Data Security & Backup",
+        "content": "200 GB"
+      },
+      {
+        "title": "Cloud Hosting & Domain",
+        "checked": false
+      },
+      {
+        "title": "Free Google Analysis",
+        "content": "$5/Year"
+      },
+      {
+        "title": "Multi-Vendor Marketplace Support",
+        "checked": false
+      },
+      {
+        "title": "Seller App",
+        "checked": false
+      },
+      {
+        "title": "Auto Lifetime Upgrade",
+        "checked": false
+      },
+      {
+        "title": "Free SSL Certificate",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "title": "premium Plan",
+    "price": {
+      "monthly": "$49",
+      "yearly": "$49"
+    },
+    "short_description": "Free forever.!",
+    "description": "No credit card required.",
+    "bestChoice": true,
+    "features": [
+      {
+        "title": "Unlimited Projects",
+        "checked": true
+      },
+      {
+        "title": "Lifetime Support & SEO Experts Consult",
+        "checked": true
+      },
+      {
+        "title": "Advance Dashboard",
+        "checked": true
+      },
+      {
+        "title": "Data Security & Backup",
+        "content": "1 TB"
+      },
+      {
+        "title": "Cloud Hosting & Domain",
+        "checked": false
+      },
+      {
+        "title": "Free Google Analysis",
+        "checked": true
+      },
+      {
+        "title": "Multi-Vendor Marketplace Support",
+        "checked": false
+      },
+      {
+        "title": "Seller App",
+        "checked": true
+      },
+      {
+        "title": "Auto Lifetime Upgrade",
+        "checked": true
+      },
+      {
+        "title": "Free SSL Certificate",
+        "checked": false
+      }
+    ]
+  },
+  {
+    "title": "ultimate",
+    "price": {
+      "monthly": "$99",
+      "yearly": "$99"
+    },
+    "short_description": "Free forever.!",
+    "description": "No credit card required.",
+    "features": [
+      {
+        "title": "Unlimited Projects",
+        "checked": true
+      },
+      {
+        "title": "Lifetime Support & SEO Experts Consult",
+        "checked": true
+      },
+      {
+        "title": "Advance Dashboard",
+        "checked": true
+      },
+      {
+        "title": "Data Security & Backup",
+        "content": "Unlimited"
+      },
+      {
+        "title": "Cloud Hosting & Domain",
+        "checked": true
+      },
+      {
+        "title": "Free Google Analysis",
+        "content": true
+      },
+      {
+        "title": "Multi-Vendor Marketplace Support",
+        "checked": true
+      },
+      {
+        "title": "Seller App",
+        "checked": true
+      },
+      {
+        "title": "Auto Lifetime Upgrade",
+        "checked": true
+      },
+      {
+        "title": "Free SSL Certificate",
+        "checked": true
+      }
+    ]
+  }
+]

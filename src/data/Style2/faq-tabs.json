@@ -1,0 +1,30 @@
+[
+  {
+    "id": "faq1-tab",
+    "target": "#faq1",
+    "image": "/assets/img/icons/users.png",
+    "title": "About Account",
+    "anwsers": "08"
+  },
+  {
+    "id": "faq2-tab",
+    "target": "#faq2",
+    "image": "/assets/img/icons/protect.png",
+    "title": "Privacy & Policy",
+    "anwsers": "20"
+  },
+  {
+    "id": "faq3-tab",
+    "target": "#faq1",
+    "image": "/assets/img/icons/dollar.png",
+    "title": "Refund Option",
+    "anwsers": "18"
+  },
+  {
+    "id": "faq4-tab",
+    "target": "#faq2",
+    "image": "/assets/img/icons/24hour.png",
+    "title": "Support & More",
+    "anwsers": "33"
+  }
+]

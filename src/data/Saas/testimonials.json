@@ -1,0 +1,38 @@
+[
+  {
+    "stars": 5,
+    "comment": "“Best dashboard for any your store, woo or shopify. Powerful and very flexiable. Recommended!”",
+    "author": {
+      "image": "/assets/img/team/1.jpeg",
+      "name": "Thomas Eristen",
+      "position": "Sale Director at Amazon Retail"
+    }
+  },
+  {
+    "stars": 5,
+    "comment": "“Iteck provide very much features to help increase CRO so amazing.”",
+    "author": {
+      "image": "/assets/img/team/2.jpeg",
+      "name": "Carlos Martinelli",
+      "position": "SEO & Marketing at Ebay Global"
+    }
+  },
+  {
+    "stars": 5,
+    "comment": "“Big thank to team support of Iteck. Fast, professional and extremly friendly. This product alway update and ehance everyday.”",
+    "author": {
+      "image": "/assets/img/team/3.jpeg",
+      "name": "Eduard Mendy",
+      "position": "VP of Sale Development"
+    }
+  },
+  {
+    "stars": 5,
+    "comment": "“Best dashboard for any your store, woo or shopify. Powerful and very flexiable. Recommended!”",
+    "author": {
+      "image": "/assets/img/team/4.jpeg",
+      "name": "Lucas Digne",
+      "position": "Sale Product Management at Flipkart"
+    }
+  }
+]

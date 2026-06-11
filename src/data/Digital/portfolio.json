@@ -1,0 +1,30 @@
+[
+  {
+    "image": "/assets/img/projects/prog/1.jpeg",
+    "title": "Infrastructure Upgrade",
+    "types": ["IT Consultation"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Consultation", "Management"]
+  },
+  {
+    "image": "/assets/img/projects/prog/2.png",
+    "title": "Criftocy Landing Page",
+    "types": ["Website Development,", "UI/UX Design"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+  },
+  {
+    "image": "/assets/img/projects/prog/3.jpeg",
+    "title": "AR/VR War 1986 Game",
+    "types": ["Game Developemnt"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["VR/AR", "iOS & Android", "Unity 2D/3D"]
+  },
+  {
+    "image": "/assets/img/projects/prog/2.png",
+    "title": "Criftocy Landing Page",
+    "types": ["Website Development,", "UI/UX Design"],
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["WordPress", "PHP", "HTML/CSS", "Figma"]
+  }
+]

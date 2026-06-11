@@ -1,0 +1,44 @@
+{
+  "name": "iteck",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.6.8",
+    "fortawesome": "^0.0.1-security",
+    "html-to-pdfmake": "^2.5.13",
+    "html2canvas": "^1.4.1",
+    "jalaali-js": "^1.2.7",
+    "keen-slider": "^6.8.6",
+    "lightgallery": "^2.5.0",
+    "lucide-react": "^1.14.0",
+    "next": "^12.0.7",
+    "pdfmake": "^0.2.14",
+    "rc-slider": "^10.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^5.6.0",
+    "react-modal-video": "^1.2.9",
+    "react-number-format": "^4.9.3",
+    "react-query": "^3.39.3",
+    "sass": "^1.54.3",
+    "styled-components": "^5.3.1",
+    "swiper": "^8.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
+  }
+}

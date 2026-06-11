@@ -1,0 +1,44 @@
+[
+  {
+    "title": "IT Consultation",
+    "number": "01",
+    "icon": "/assets/img/icons/serv_icons/1.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Strategy", "Consultation", "Management"]
+  },
+  {
+    "title": "Data Security",
+    "number": "02",
+    "icon": "/assets/img/icons/serv_icons/2.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Management", "Backup & Recovery", "Transfer"]
+  },
+  {
+    "title": "Website Development",
+    "number": "03",
+    "icon": "/assets/img/icons/serv_icons/3.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Ecommerce", "Landing Page", "CMS", "Plugin"]
+  },
+  {
+    "title": "UI/UX Design",
+    "number": "04",
+    "icon": "/assets/img/icons/serv_icons/4.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Website", "Mobile App"]
+  },
+  {
+    "title": "Cloud Services",
+    "number": "05",
+    "icon": "/assets/img/icons/serv_icons/5.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Cloud Storerage", "Hosting & VPS"]
+  },
+  {
+    "title": "Game Development",
+    "number": "06",
+    "icon": "/assets/img/icons/serv_icons/6.png",
+    "text": "Trust our top minds to eliminate workflow pain points, implement new tech & app.",
+    "tags": ["Unity 2D/3D", "VR/AR", "iOS & Android", "HTC Vive"]
+  }
+]

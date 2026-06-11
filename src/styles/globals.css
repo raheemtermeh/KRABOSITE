@@ -1,0 +1,496 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFFBF0 100%);
+  font-family: 'Vazir', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ========== Color Variables ========== */
+:root {
+  --gold-primary: #D4AF37;
+  --gold-secondary: #FFD700;
+  --gold-dark: #B8860B;
+  --gold-light: #F5DEB3;
+  --bg-light: #FFFBF0;
+  --bg-white: #FFFFFF;
+  --text-dark: #2C2416;
+  --text-gray: #6B5D4F;
+  --shadow-sm: 0 2px 8px rgba(212, 175, 55, 0.1);
+  --shadow-md: 0 4px 16px rgba(212, 175, 55, 0.15);
+  --shadow-lg: 0 8px 24px rgba(212, 175, 55, 0.2);
+}
+
+/* ========== Modal & Backdrop ========== */
+.modal-video {
+  background: rgba(44, 36, 22, 0.95) !important;
+}
+
+.lg-backdrop {
+  background-color: rgba(44, 36, 22, 0.9) !important;
+}
+
+.lg-react-element {
+  display: none;
+}
+
+.lg-container, .lg-container * {
+  direction: ltr !important;
+}
+
+/* ========== Slider Styles ========== */
+.rc-slider-handle {
+  border-color: var(--gold-primary) !important;
+  background-color: var(--gold-primary) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+.rc-slider-handle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.3) !important;
+}
+
+.rc-slider-handle-dragging {
+  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.4) !important;
+}
+
+.rc-slider-track {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-secondary)) !important;
+}
+
+.rc-slider-rail {
+  background-color: var(--gold-light) !important;
+}
+
+/* ========== Swiper Direction ========== */
+.related-products-slider .swiper-container,
+.slider-3items .swiper-container,
+.screenshots-slider .swiper-container {
+  direction: ltr !important;
+}
+
+.pricing.style-8 .rc-slider-handle {
+  background-color: #fff !important;
+  border-color: var(--gold-primary) !important;
+}
+
+/* ========== Mobile Header ========== */
+.header-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+  box-shadow: var(--shadow-md);
+  border-radius: 0 0 20px 20px;
+  z-index: 999;
+  padding: 14px;
+  backdrop-filter: blur(10px);
+}
+
+/* ========== Mobile Footer ========== */
+.footer-mobile {
+  position: fixed !important;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  max-width: 370px;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 53px 53px 10px 10px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-white) 0%, var(--gold-light) 100%);
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  padding: 14px;
+}
+
+.li-footer {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  font-size: 12px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.li-footer:hover {
+  color: var(--gold-primary);
+  transform: translateY(-2px);
+}
+
+/* ========== Responsive Utilities ========== */
+.show-mobile {
+  display: none !important;
+}
+
+.show-mobile-flex {
+  display: none !important;
+}
+
+@media (max-width: 680px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: block !important;
+  }
+
+  .show-mobile-flex {
+    display: flex !important;
+    justify-content: space-between;
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+  }
+}
+
+/* ========== Tab Pane Styles ========== */
+.tab-pane.fade.show.active {
+  background: var(--bg-white);
+  border-radius: 16px;
+  margin-top: 10px;
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  line-height: 1.8;
+  border: 2px solid var(--gold-light);
+}
+
+/* ========== Product Card Styles ========== */
+.product-card {
+  background: var(--bg-white) !important;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-primary);
+}
+
+.product-card .img {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card .img img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .img img {
+  transform: scale(1.1);
+}
+
+.product-card .title {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.product-card .title:hover {
+  color: var(--gold-primary);
+}
+
+.product-card .price {
+  color: var(--gold-dark);
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.product-card .btn {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  color: var(--text-dark);
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-card .btn:hover {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  color: white;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Stars Rating ========== */
+.stars .fa-star {
+  color: #E0E0E0;
+  transition: color 0.3s ease;
+}
+
+.stars .fa-star.active {
+  color: var(--gold-secondary);
+}
+
+/* ========== Section Styles ========== */
+.section-head h2 {
+  color: var(--text-dark);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section-head h2 span {
+  color: var(--gold-primary);
+  position: relative;
+}
+
+.section-head h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
+  border-radius: 2px;
+}
+
+/* ========== Nav Pills (Category Buttons) ========== */
+.nav-pills .nav-link {
+  background-color: var(--gold-light) !important;
+  color: var(--gold-dark) !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: var(--gold-primary) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary)) !important;
+  color: white !important;
+  border-color: var(--gold-dark);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Gold Range Box Custom Button ========== */
+.custom-btn {
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+  border: 2px solid var(--gold-dark);
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-btn:hover {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: white !important;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Responsive Typography ========== */
+@media (max-width: 768px) {
+  .section-head h2 {
+    font-size: 24px;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .product-card .title {
+    font-size: 14px;
+  }
+
+  .product-card .price {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-head h2 {
+    font-size: 20px;
+  }
+
+  .tab-pane.fade.show.active {
+    padding: 20px;
+  }
+}
+
+/* ========== Smooth Scrolling ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== Selection Color ========== */
+::selection {
+  background-color: var(--gold-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--gold-primary);
+  color: white;
+}
+
+/* استایل بنر تبلیغاتی کوچک و مدرن */
+.promo-banner {
+  max-width: 500px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  margin-top: 6px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.promo-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(136, 10, 10, 0.08), rgba(255, 140, 0, 0.05));
+  backdrop-filter: blur(4px);
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(136, 10, 10, 0.15);
+  transition: all 0.3s ease;
+}
+
+.promo-content:hover {
+  transform: translateY(-2px);
+  border-color: rgba(136, 10, 10, 0.3);
+  box-shadow: 0 4px 12px rgba(136, 10, 10, 0.1);
+}
+
+.promo-icon {
+  font-size: 14px;
+  animation: sparkle 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.promo-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8B0000;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .promo-content {
+    padding: 6px 16px;
+  }
+  .promo-text {
+    font-size: 10px;
+  }
+  .promo-icon {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-content {
+    padding: 5px 12px;
+  }
+  .promo-text {
+    font-size: 9px;
+  }
+}
+/* در بخش @media (max-width: 768px) این را اضافه کن */
+@media (max-width: 768px) {
+  .profile-btn-desktop {
+    display: none !important;
+  }
+
+  .cart-btn-desktop {
+    display: none !important;
+  }
+
+  /* بقیه استایل‌های موجود */
+}
+
+/* در بخش @media (max-width: 992px) این را اضافه کن */
+@media (max-width: 992px) {
+  .logo-text { font-size: 36px; letter-spacing: 8px; }
+  .gold-value-new { font-size: 14px; }
+  .menu-horizontal-link { padding: 12px 12px; font-size: 13px; }
+  .dropdown-menu-edit { min-width: 350px; }
+  
+  .logo-center img {
+    width: 200px !important;
+  }
+  
+  .gold-label-new {
+    font-size: 11px;
+  }
+  
+  .gold-value-new {
+    font-size: 11px;
+  }
+  
+  .header-icons {
+    gap: 6px;
+  }
+  
+  .icon-btn {
+    font-size: 18px;
+  }
+  
+  .profile-btn-desktop,
+  .cart-btn-desktop,
+  .login-btn-desktop {
+    padding: 5px 8px;
+    font-size: 10px;
+    gap: 3px;
+  }
+  
+  .search-btn-desktop {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .profile-icon-mobile {
+    display: block !important;
+  }
+
+  .cart-icon-mobile {
+    display: block !important;
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "bi bi-bell",
+    "title": "Lifetime Use",
+    "description": "Buy once, and it is yours forever. Perfect deal!"
+  },
+  {
+    "icon": "bi bi-hourglass",
+    "title": "Regular Updates",
+    "description": "We commit to keep your site up-to-date. Free for lifetime."
+  },
+  {
+    "icon": "bi bi-infinity",
+    "title": "Infinitely Flexible",
+    "description": "Manage the html theme and take full control over your site."
+  },
+  {
+    "icon": "bi bi-mouse",
+    "title": "Unique Animations",
+    "description": "Smooth animations, cool effects. Attraction guaranteed."
+  },
+  {
+    "icon": "bi bi-briefcase",
+    "title": "Huge Element Collection",
+    "description": "Huge collection of elements and flexible layouts!"
+  },
+  {
+    "icon": "bi bi-bar-chart",
+    "title": "SEO Friendly",
+    "description": "The best SEO practices to achieve higher rankings on Google."
+  }
+]

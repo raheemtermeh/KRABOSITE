@@ -1,0 +1,22 @@
+{
+  "text": "Our highly skilled development teams specialized in data analysis.",
+  "email": "info@iteck-info.com",
+  "phone": "907 000 999 22",
+  "address": "12/A, New Booston, NYC",
+  "links": [
+    { "href": "#", "text": "Online Marketing" },
+    { "href": "#", "text": "Technology" },
+    { "href": "#", "text": "Business" },
+    { "href": "#", "text": "Content strategy" },
+    { "href": "#", "text": "Development" },
+    { "href": "#", "text": "Advertising Strategy" }
+  ],
+  "morePages": [
+    { "href": "#", "text": "About Iteck" },
+    { "href": "#", "text": "Investors" },
+    { "href": "#", "text": "Contact" },
+    { "href": "#", "text": "Affiliate Program" },
+    { "href": "#", "text": "How It Works" },
+    { "href": "#", "text": "Pricing Plan" }
+  ]
+}

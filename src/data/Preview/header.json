@@ -1,0 +1,31 @@
+{
+  "scene1": {
+    "one": [
+      { "img": "/landing-preview/img/header/1.jpg", "depth": "0.10", "class": "" },
+      { "img": "/landing-preview/img/header/1.jpg", "depth": "0.15", "class": "btm1" },
+      { "img": "/landing-preview/img/header/1.jpg", "depth": "0.20", "class": "btm2" }
+    ],
+    "three": [
+      { "img": "/landing-preview/img/header/4.jpg", "depth": "0.10", "class": "" },
+      { "img": "/landing-preview/img/header/4.jpg", "depth": "0.15", "class": "btm1" },
+      { "img": "/landing-preview/img/header/4.jpg", "depth": "0.20", "class": "btm2" }
+    ],
+    "four": [
+      { "img": "/landing-preview/img/header/8.jpg", "depth": "0.10", "class": "" },
+      { "img": "/landing-preview/img/header/8.jpg", "depth": "0.15", "class": "btm1" },
+      { "img": "/landing-preview/img/header/8.jpg", "depth": "0.20", "class": "btm2" }
+    ]
+  },
+  "scene2": {
+    "two": [
+      { "img": "/landing-preview/img/header/11.jpg", "depth": "0.10", "class": "" },
+      { "img": "/landing-preview/img/header/11.jpg", "depth": "0.15", "class": "btm1" },
+      { "img": "/landing-preview/img/header/11.jpg", "depth": "0.20", "class": "btm2" }
+    ],
+    "five": [
+      { "img": "/landing-preview/img/header/5.jpg", "depth": "0.10", "class": "" },
+      { "img": "/landing-preview/img/header/5.jpg", "depth": "0.15", "class": "btm1" },
+      { "img": "/landing-preview/img/header/5.jpg", "depth": "0.20", "class": "btm2" }
+    ]
+  }
+}

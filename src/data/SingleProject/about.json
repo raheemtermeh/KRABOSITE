@@ -1,0 +1,24 @@
+[
+  {
+    "title": "client",
+    "description": {
+      "part1": "Micosoft Holding Ltd, ",
+      "part2": " Australia Area"
+    }
+  },
+  {
+    "title": "services",
+    "description": "IT Consultation, UI/UX Design, Cloud Service"
+  },
+  {
+    "title": "date",
+    "description": "Feburary 25th, 2022"
+  },
+  {
+    "title": "team",
+    "description": {
+      "part1": "Logan Cee - Designer",
+      "part2": "Martin Moussa - iOS Developer"
+    }
+  }
+]
