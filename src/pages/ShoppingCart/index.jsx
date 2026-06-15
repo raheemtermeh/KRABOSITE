@@ -18,7 +18,7 @@ const ShoppingCart = ({ header }) => {
   const [sum, setSum] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [id, setId] = useState("");
-
+  const [factorId, setFactorId] = useState("");
   ///////////////////////////////////////////////
 
   const router = useRouter();
@@ -224,6 +224,8 @@ const ShoppingCart = ({ header }) => {
               nextStep={nextStep}
               prevStep={prevStep}
               setId={setId}
+              factorId={factorId}        // ✅ اضافه کن
+              setFactorId={setFactorId}
             />
           </>
         );
@@ -1357,7 +1359,7 @@ const CartReview = ({
         <div className="total-summary">
           <div className="total-content">
             <div className="total-label">
-              
+
               جمع کل سبد خرید
             </div>
             <div className="total-value-box">
@@ -1397,7 +1399,7 @@ const CartReview = ({
 );
 
 // Step 2: User Info Form
-const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId }) => {
+const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factorId, setFactorId }) => {
   const router = useRouter();
   const [addresses, setAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState("");
@@ -1506,7 +1508,6 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId }) => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         };
-        console.log(userInfo);
         const response = await axios.post(
           "https://python.krabo.gold/api/order/pre-invoice/",
           {
@@ -1516,9 +1517,13 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId }) => {
           },
           { headers },
         );
-        console.log(response?.data?.data?.id);
 
-        router.push(`/factor/${response?.data?.data?.id}`);
+        const newFactorId = response?.data?.data?.id;
+        setFactorId(newFactorId); // ✅ ذخیره id فاکتور در state
+        setId(newFactorId); // ذخیره در state والد (اختیاری)
+
+        // ❌ حذف این خط:
+        // router.push(`/factor/${response?.data?.data?.id}`);
       } else {
         userInfo.name === "" && setShowNameError(true);
         userInfo.address === "" && setShowAddressError(true);
@@ -1727,41 +1732,66 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId }) => {
               </div>
             </div>
           )}
-
-          {/* <div>
-    <h4 style={{margin:10}}>انتخاب روش پرداخت</h4>
-    <select
-      className="form-control mb-3"
-      value={paymentMethod}
-      onChange={(e) => setPaymentMethod(e.target.value)}
-      >
-      <option value="">انتخاب روش پرداخت</option>
-      <option value="credit_card">درگاه انلاین زیبال</option>
-    </select>
-      </div> */}
+          {/* 
+          <div>
+            <h style={{ margin: 10 }}>پرداخت</h>
+          </div> */}
         </form>
       </div>
 
       {/* Action Buttons */}
+      {/* دکمه‌های عملیات */}
       <div className="action-section">
-        <button className="btn-next" onClick={create_pre_invoice}>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-          </svg>
-          ایجاد پیش فاکتور
-        </button>
+        {!factorId ? (
+          // اگر فاکتور هنوز ایجاد نشده
+          <button className="btn-next" onClick={create_pre_invoice}>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            ایجاد پیش فاکتور
+          </button>
+        ) : (
+          // ✅ اگر فاکتور ایجاد شده - دکمه‌های پرداخت و مشاهده فاکتور
+          <>
+            <button
+              style={{
+                backgroundColor: "rgb(111 10 10)",
+                color: "white",
+                border: "none",
+                margin: "10px",
+                padding: "10px",
+                borderRadius: "10px",
+                fontSize: "28px",
+              }}
+              onClick={() => {
+                window.open(
+                  `http://krabo.gold:3421/api/order/go-to-geteway/?id=${factorId}`,
+                  "_blank"
+                );
+              }}
+            >
+              پرداخت
+            </button>
+            <button
+              className="btn-next"
+              onClick={() => router.push(`/factor/${factorId}`)}
+            >
+              مشاهده فاکتور
+            </button>
+          </>
+        )}
 
         <button className="btn-back" onClick={prevStep}>
           <svg

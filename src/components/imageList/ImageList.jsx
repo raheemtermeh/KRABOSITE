@@ -93,7 +93,7 @@ const ImageList = () => {
         <SwiperSlide>
           <img
             className="collection-image"
-            src="/assets/img/neckless.PNG"
+            src="/assets/img/neckless.png"
             alt="کالکشن زنانه"
           />
         </SwiperSlide>
@@ -110,7 +110,7 @@ const ImageList = () => {
               objectFit: "cover",
             }}
             className="collection-image"
-            src="/assets/img/logo.PNG"
+            src="/assets/img/logo.png"
             alt="گولو"
           />
           <h4 style={{color:"#9f6c2a",marginTop:30,fontWeight:"lighter"}}>خرید و سفارش</h4>
@@ -124,7 +124,7 @@ const ImageList = () => {
         >
           <img
             className="collection-image"
-            src="/assets/img/earing.PNG"
+            src="/assets/img/earing.png"
             alt="کالکشن مردانه"
           />
         </SwiperSlide>
@@ -135,7 +135,7 @@ const ImageList = () => {
         >
           <img
             className="collection-image"
-            src="/assets/img/bracelet.PNG"
+            src="/assets/img/bracelet.png"
             alt="کالکشن بچگانه"
           />
         </SwiperSlide>

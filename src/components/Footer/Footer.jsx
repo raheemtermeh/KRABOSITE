@@ -218,24 +218,171 @@ const Footer = ({ noWave, rtl }) => {
 
   return (
     <>
-      {" "}
       {/* باکس ویژگی‌ها - اضافه شده بالای فوتر */}
       <FeaturesBox />
+      
+      {/* استایل‌های ریسپانسیو فوتر */}
+      <style jsx>{`
+        /* ریسپانسیو برای تبلت */
+        @media (max-width: 992px) {
+          .footer-title {
+            font-size: 38px !important;
+          }
+          .footer-section-title {
+            font-size: 28px !important;
+          }
+          .footer-link {
+            font-size: 20px !important;
+          }
+          .footer-social-icon {
+            width: 45px !important;
+            height: 45px !important;
+          }
+          .footer-social-icon svg {
+            width: 45px !important;
+            height: 45px !important;
+          }
+          .footer-badge {
+            height: 100px !important;
+          }
+        }
+
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 768px) {
+          .footer-container {
+            padding-top: 40px !important;
+            padding-bottom: 30px !important;
+          }
+          .footer-main-wrapper {
+            gap: 30px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          .footer-title {
+            font-size: 32px !important;
+            margin-right: 0 !important;
+            margin-bottom: 25px !important;
+            text-align: center !important;
+          }
+          .footer-social-wrapper {
+            margin-right: 0 !important;
+            justify-content: center !important;
+            gap: 8px !important;
+          }
+          .footer-social-icon {
+            width: 42px !important;
+            height: 42px !important;
+          }
+          .footer-social-icon svg {
+            width: 42px !important;
+            height: 42px !important;
+          }
+          .footer-badges-wrapper {
+            margin-top: 20px !important;
+            justify-content: center !important;
+            gap: 8px !important;
+          }
+          .footer-badge {
+            height: 80px !important;
+          }
+          .footer-section-title {
+            font-size: 24px !important;
+            margin-bottom: 20px !important;
+            text-align: center !important;
+          }
+          .footer-section {
+            text-align: center !important;
+            min-width: auto !important;
+            width: 100% !important;
+          }
+          .footer-link {
+            font-size: 18px !important;
+            margin-bottom: 12px !important;
+            text-align: center !important;
+            display: block !important;
+          }
+          .footer-link:hover {
+            transform: none !important;
+          }
+        }
+
+        /* ریسپانسیو برای موبایل کوچک */
+        @media (max-width: 576px) {
+          .footer-container {
+            padding-top: 30px !important;
+            padding-bottom: 25px !important;
+          }
+          .footer-title {
+            font-size: 28px !important;
+            letter-spacing: 8px !important;
+          }
+          .footer-social-wrapper {
+            gap: 6px !important;
+          }
+          .footer-social-icon {
+            width: 38px !important;
+            height: 38px !important;
+          }
+          .footer-social-icon svg {
+            width: 38px !important;
+            height: 38px !important;
+          }
+          .footer-badges-wrapper {
+            gap: 6px !important;
+          }
+          .footer-badge {
+            height: 70px !important;
+          }
+          .footer-section-title {
+            font-size: 22px !important;
+          }
+          .footer-link {
+            font-size: 16px !important;
+            margin-bottom: 10px !important;
+          }
+        }
+
+        /* ریسپانسیو برای موبایل خیلی کوچک */
+        @media (max-width: 400px) {
+          .footer-title {
+            font-size: 24px !important;
+            letter-spacing: 6px !important;
+          }
+          .footer-social-icon {
+            width: 35px !important;
+            height: 35px !important;
+          }
+          .footer-social-icon svg {
+            width: 35px !important;
+            height: 35px !important;
+          }
+          .footer-badge {
+            height: 60px !important;
+          }
+          .footer-section-title {
+            font-size: 20px !important;
+          }
+          .footer-link {
+            font-size: 15px !important;
+          }
+        }
+      `}</style>
+
       <footer
         className={`style-4 ${noWave ? "mt-0 pt-100" : ""}`}
         data-scroll-index="8"
-        style={{ marginTop: "-1px" }} // اضافه کردن این خط
+        style={{ marginTop: "-1px" }}
       >
-        <div className="bg-[#b3b795] pt-[60px] pb-[40px]">
+        <div className="bg-[#b3b795] footer-container pt-[60px] pb-[40px]">
           <div className="container">
-            <div className="flex justify-center items-start mb-[50px] gap-[120px] max-w-[1200px] ml-auto mr-auto flex-row-reverse max-lg:flex-wrap max-lg:gap-[40px] max-md:flex-col max-md:items-center">
+            <div className="flex justify-center items-start mb-[50px] gap-[120px] max-w-[1200px] ml-auto mr-auto flex-row-reverse max-lg:flex-wrap max-lg:gap-[40px] max-md:flex-col max-md:items-center footer-main-wrapper">
               {/* برند و آیکون‌های اجتماعی - سمت چپ */}
-              <div className="flex-[0_0_auto]">
-                <h2 className="text-[48px] mr-40 font-light tracking-[12px] text-white mb-[40px] font-[Arial,sans-serif] max-lg:text-[38px]">
+              <div className="flex-[0_0_auto] footer-section">
+                <h2 className="text-[48px] mr-40 font-light tracking-[12px] text-white mb-[40px] font-[Arial,sans-serif] max-lg:text-[38px] footer-title">
                   KRABO
                 </h2>
-                <div className="flex mr-36 gap-10">
-                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px]">
+                <div className="flex mr-36 gap-10 footer-social-wrapper">
+                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px] footer-social-icon">
                     <svg
                       viewBox="0 0 24 24"
                       className="w-[55px] h-[55px] fill-white"
@@ -243,7 +390,7 @@ const Footer = ({ noWave, rtl }) => {
                       <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
                     </svg>
                   </div>
-                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px]">
+                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px] footer-social-icon">
                     <svg
                       viewBox="0 0 24 24"
                       className="w-[55px] h-[55px] fill-white"
@@ -251,7 +398,7 @@ const Footer = ({ noWave, rtl }) => {
                       <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z" />
                     </svg>
                   </div>
-                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px]">
+                  <div className="w-[55px] h-[55px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 cursor-pointer border-white/30 hover:border-white/60 hover:-translate-y-[3px] footer-social-icon">
                     <svg
                       viewBox="0 0 24 24"
                       className="w-[55px] h-[55px] fill-white"
@@ -262,41 +409,41 @@ const Footer = ({ noWave, rtl }) => {
                 </div>
 
                 {/* بخش بج‌ها زیر آیکون‌ها */}
-                <div className="flex gap-[10px] items-center mt-[30px] max-md:justify-center">
+                <div className="flex gap-[10px] items-center mt-[30px] max-md:justify-center footer-badges-wrapper">
                   <div className="text-center">
                     <img
                       src={enamadimg.src}
                       alt="enamad"
-                      className="h-[120px] w-auto"
+                      className="h-[120px] w-auto footer-badge"
                     />
                   </div>
                   <div className="text-center">
                     <img
                       src={samandehi.src}
                       alt="samandehi"
-                      className="h-[120px] w-auto"
+                      className="h-[120px] w-auto footer-badge"
                     />
                   </div>
                   <div className="text-center">
                     <img
                       src={paymentimg.src}
                       alt="payment"
-                      className="h-[120px] w-auto"
+                      className="h-[120px] w-auto footer-badge"
                     />
                   </div>
                 </div>
               </div>
 
               {/* ستون حساب کاربری - وسط */}
-              <div className="flex-[0_0_auto] min-w-[80px] max-md:text-center">
-                <h3 className="text-[36px] font-semibold text-white mb-[25px] text-right max-md:text-center">
+              <div className="flex-[0_0_auto] min-w-[80px] max-md:text-center footer-section">
+                <h3 className="text-[36px] font-semibold text-white mb-[25px] text-right max-md:text-center footer-section-title">
                   حساب کاربری
                 </h3>
                 <ul className="list-none p-0 m-0">
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       اطلاعات شخصی من
                     </a>
@@ -304,7 +451,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       سفارشات من
                     </a>
@@ -313,15 +460,15 @@ const Footer = ({ noWave, rtl }) => {
               </div>
 
               {/* ستون پشتیبانی - سمت راست */}
-              <div className="flex-[0_0_auto] min-w-[80px] max-md:text-center">
-                <h3 className="text-[36px] font-semibold text-white mb-[25px] text-right max-md:text-center">
+              <div className="flex-[0_0_auto] min-w-[80px] max-md:text-center footer-section">
+                <h3 className="text-[36px] font-semibold text-white mb-[25px] text-right max-md:text-center footer-section-title">
                   پشتیبانی
                 </h3>
                 <ul className="list-none p-0 m-0">
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       تماس با ما
                     </a>
@@ -329,7 +476,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       آشنایی با کرابو{" "}
                     </a>
@@ -337,7 +484,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       رهگیری مرسولات پستی
                     </a>
@@ -345,7 +492,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       قوانین و مقررات
                     </a>
@@ -353,7 +500,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       سوالات متداول
                     </a>
@@ -361,7 +508,7 @@ const Footer = ({ noWave, rtl }) => {
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
                       href="#"
-                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px]"
+                      className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       ثبت شکایات
                     </a>

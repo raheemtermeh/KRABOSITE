@@ -71,15 +71,34 @@
   color: #7e8288;
 }
 
+/* استایل باکس ویژگی‌ها */
 .flex-fix {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 7px;
+  flex-direction: column;
+  gap: 12px;
 }
 
-@media (max-width: 680px) {
-.flex-fix{
-  display: block;
-  
+.attributes {
+  background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
+  border: 1px solid #f5e6c8;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
+.attributes:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 4px 15px rgba(136, 10, 10, 0.1);
+  border-color: #d4af37;
+}
+
+.attributes .comment {
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.6;
+  display: block;
 }

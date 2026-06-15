@@ -104,7 +104,6 @@ function Factor({ header }) {
         y: 0,
         windowWidth: rect.width,
         windowHeight: rect.height,
-        // ✅ این قسمت را اضافه کن
         onclone: (clonedDoc) => {
           const allElements = clonedDoc.querySelectorAll("*");
           allElements.forEach((el) => {
@@ -124,7 +123,6 @@ function Factor({ header }) {
                 value &&
                 (value.includes("oklch") || value.includes("lab("))
               ) {
-                // تبدیل به transparent برای border و رنگ مشکی برای text
                 if (prop.includes("border")) {
                   el.style[prop] = "rgb(51, 51, 51)";
                 } else if (prop === "backgroundColor") {
@@ -224,6 +222,7 @@ function Factor({ header }) {
 
   const sum = myFactor?.data?.sum;
   const goldPrice = factorData?.item?.[0]?.gold_price;
+  const isPaid = factorData?.pay_status;
 
   return (
     <>
@@ -257,11 +256,31 @@ function Factor({ header }) {
         `}</style>
 
         {/* دکمه‌های عملیات */}
-        {/* دکمه‌های عملیات */}
         <div
           className="container mt-4 mb-4 no-print"
           style={{ textAlign: "center" }}
         >
+          {/* ✅ دکمه پرداخت جدید (بر اساس کد دوم) */}
+          <button
+            style={{
+              backgroundColor: "rgb(111 10 10)",
+              color: "white",
+              border: "none",
+              margin: "10px",
+              padding: "10px",
+              borderRadius: "10px",
+              fontSize: "28px",
+            }}
+            onClick={() => {
+              window.open(
+                `http://krabo.gold:3421/api/order/go-to-geteway/?id=${id}`,
+                "_blank" // مقدار "_bank" از کد اصلی به "_blank" اصلاح شد
+              );
+            }}
+          >
+            پرداخت
+          </button>
+
           <button
             className="btn mx-2"
             onClick={generatePNG}
@@ -354,15 +373,12 @@ function Factor({ header }) {
             </div>
 
             {/* جدول اصلی */}
-            {/* جدول اصلی با بک‌گراند لوگو */}
             <div
               style={{
                 position: "relative",
                 marginBottom: "20px",
-                // backgroundImage: `url(${logoo.src})`,
               }}
             >
-              {/* لوگو در پس‌زمینه - با تگ img ساده */}
               <img
                 src={logoo.src}
                 alt="logo"
@@ -375,12 +391,11 @@ function Factor({ header }) {
                   width: "250px",
                   height: "250px",
                   objectFit: "contain",
-                  opacity: 100, // از 100 به 0.2 تغییر دهید
+                  opacity: 0.2,
                   pointerEvents: "none",
                   zIndex: 0,
                 }}
               />
-              {/* <img src={logoo.src} alt="annnnnnnnnnnnnnnnnn" /> */}
 
               <table
                 className="factor-table"
@@ -390,7 +405,6 @@ function Factor({ header }) {
                   border: "2px solid #333",
                   position: "relative",
                   zIndex: 1,
-                  // backgroundColor: "rgba(255, 255, 255, 0.92)",
                 }}
               >
                 <thead>
@@ -476,7 +490,6 @@ function Factor({ header }) {
                 borderTop: "1px solid #ddd",
               }}
             >
-              {/* اینستاگرام */}
               <div
                 style={{ display: "flex", alignItems: "center", gap: "8px" }}
               >
@@ -501,14 +514,12 @@ function Factor({ header }) {
                 </span>
               </div>
 
-              {/* امضا */}
               <div
                 style={{ fontSize: "14px", color: "#333", fontWeight: "bold" }}
               >
                 امضاء فروشنده
               </div>
 
-              {/* واتساپ */}
               <div
                 style={{ display: "flex", alignItems: "center", gap: "8px" }}
               >

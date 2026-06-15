@@ -204,11 +204,11 @@ export default function Profile({ header }) {
       case 0:
         return { text: "لغو شده", icon: faTimesCircle, color: "#dc3545", bg: "#dc354510" };
       case 1:
-        return { text: "فاکتور شده", icon: faFileInvoice, color: "#17a2b8", bg: "#17a2b810" };
+        return { text: "پرداخت شده", icon: faCheckCircle, color: "#28a745", bg: "#28a74510" };
       case 2:
-        return { text: "پرداخت شده", icon: faCreditCard, color: "#28a745", bg: "#28a74510" };
+        return { text: "در انتظار پرداخت", icon: faCreditCard, color: "#ffc107", bg: "#ffc10710" };
       case 3:
-        return { text: "در حال ساخت", icon: faSpinner, color: "#ffc107", bg: "#ffc10710" };
+        return { text: "ارسال شده", icon: faShoppingBag, color: "#17a2b8", bg: "#17a2b810" };
       case 4:
         return { text: "پیش فاکتور", icon: faFileInvoice, color: "#6c757d", bg: "#6c757d10" };
       default:
@@ -427,6 +427,9 @@ export default function Profile({ header }) {
                   <div className="factors-list">
                     {myFactors.map(item => {
                       const status = getStatusInfo(item.status_code);
+                      // ✅ دکمه پرداخت فقط برای پیش فاکتور (4) و در انتظار پرداخت (2)
+                      const canPay = item.status_code === 2 || item.status_code === 4;
+
                       return (
                         <div key={item.id} className="factor-item">
                           <div className="factor-info">
@@ -436,17 +439,35 @@ export default function Profile({ header }) {
                               <span>{status.text}</span>
                             </div>
                           </div>
-                          <button
-                            className="factor-action"
-                            onClick={() => {
-                              // چاپ فاکتور برای همه وضعیت‌ها فعال است
-                              router.push(`/factor/${item.id}`);
-                            }}
-                            // هیچ وضعیتی غیرفعال نیست
-                          >
-                            <FontAwesomeIcon icon={faPrint} />
-                            چاپ فاکتور
-                          </button>
+
+                          <div className="factor-actions">
+                            {/* ✅ دکمه پرداخت - فقط برای فاکتورهای پرداخت نشده */}
+                            {canPay && (
+                              <button
+                                className="factor-action pay-btn"
+                                onClick={() => {
+                                  window.open(
+                                    `http://krabo.gold:3421/api/order/go-to-geteway/?id=${item.id}`,
+                                    "_blank"
+                                  );
+                                }}
+                              >
+                                <FontAwesomeIcon icon={faCreditCard} />
+                                پرداخت
+                              </button>
+                            )}
+
+                            {/* دکمه چاپ فاکتور - برای همه وضعیت‌ها */}
+                            <button
+                              className="factor-action print-btn"
+                              onClick={() => {
+                                router.push(`/factor/${item.id}`);
+                              }}
+                            >
+                              <FontAwesomeIcon icon={faPrint} />
+                              چاپ فاکتور
+                            </button>
+                          </div>
                         </div>
                       );
                     })}
@@ -622,6 +643,51 @@ export default function Profile({ header }) {
           display: flex;
           gap: 12px;
         }
+
+/* Factor Actions Container */
+.factor-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Pay Button */
+.factor-action.pay-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.factor-action.pay-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Print Button */
+.factor-action.print-btn {
+  background: #880a0a;
+  color: white;
+}
+
+.factor-action.print-btn:hover {
+  background: #6b0506;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(136, 10, 10, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .factor-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .factor-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
         .btn {
           flex: 1;

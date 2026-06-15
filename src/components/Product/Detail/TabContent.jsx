@@ -8,6 +8,20 @@ import { useRouter } from "next/router";
 import LoadingOverlay from "@components/loadingOverlay";
 
 const TabContent = ({ isActive, id, product }) => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [Image, SetImage] = useState(null);
@@ -70,7 +84,7 @@ const TabContent = ({ isActive, id, product }) => {
     } catch (error) {
       setError(
         "خطا! " +
-          (error.response ? error.response.data.message : "بعدا تلاش کنید"),
+        (error.response ? error.response.data.message : "بعدا تلاش کنید"),
       );
       console.error("Error:", error);
     } finally {
@@ -173,7 +187,7 @@ const TabContent = ({ isActive, id, product }) => {
 
                     <div className="col-lg-7">
                       <h5
-                        onClick={() => {}}
+                        onClick={() => { }}
                         className="text-uppercase"
                         style={{ color: "black" }}
                       >
@@ -260,7 +274,6 @@ const TabContent = ({ isActive, id, product }) => {
                     className="btn rounded-pill bg-blue4 fw-bold text-white "
                   >
                     <small>
-                      <i className="fa fa-shopping-cart me-2 pe-2 border-end"></i>
                       افزودن به سبد خرید
                     </small>
                   </button>
@@ -418,6 +431,50 @@ const TabContent = ({ isActive, id, product }) => {
                                 transform: scale(1.1);
                               }
 
+                              /* دکمه سبد خرید شناور موبایل */
+                              /* دکمه سبد خرید شناور موبایل */
+.mobile-sticky-cart {
+  display: none !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid #f0f0f0;
+}
+
+.mobile-cart-info {
+  flex: 1;
+}
+
+.mobile-cart-btn {
+  background: linear-gradient(135deg, #880a0a 0%, #a01010 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(136, 10, 10, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.mobile-cart-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(136, 10, 10, 0.4);
+}
+
                               /* ریسپانسیو برای موبایل */
                               @media (max-width: 768px) {
                                 .product-gallery {
@@ -437,6 +494,42 @@ const TabContent = ({ isActive, id, product }) => {
                                   min-width: 60px;
                                   border-radius: 14px;
                                 }
+
+                                /* نمایش دکمه سبد خرید موبایل */
+                                .mobile-sticky-cart {
+                                  display: flex !important;
+                                }
+
+                                /* مخفی کردن باکس سمت چپ در موبایل */
+                                .hide-mobile {
+                                  display: none !important;
+                                }
+
+                                /* فاصله پایین برای دکمه شناور */
+                                .tab-content {
+                                  padding-bottom: 80px;
+                                }
+
+                                /* بهبود فیلترها در موبایل */
+                                .form-select {
+                                  font-size: 14px;
+                                  padding: 10px 14px;
+                                }
+
+                                /* بهبود breadcrumb در موبایل */
+                                .breadcrumb {
+                                  font-size: 12px;
+                                }
+
+                                .breadcrumb-item {
+                                  padding: 0 4px;
+                                }
+
+                                /* بهبود عنوان محصول در موبایل */
+                                h1 {
+                                  font-size: 20px !important;
+                                  line-height: 1.4;
+                                }
                               }
 
                               @media (max-width: 576px) {
@@ -454,11 +547,31 @@ const TabContent = ({ isActive, id, product }) => {
                                   width: 20px;
                                   bottom: -4px;
                                 }
+
+                                /* دکمه سبد خرید موبایل کوچکتر */
+                                .mobile-cart-btn {
+                                  padding: 10px 18px;
+                                  font-size: 13px;
+                                }
+
+                                .mobile-cart-info .priceProduct {
+                                  font-size: 16px !important;
+                                }
                               }
 
                               @media (max-width: 480px) {
                                 .thumbnail-item {
                                   min-width: 50px;
+                                }
+
+                                /* تنظیمات خاص برای صفحات خیلی کوچک */
+                                .mobile-sticky-cart {
+                                  padding: 10px 12px;
+                                }
+
+                                .mobile-cart-btn {
+                                  padding: 10px 16px;
+                                  font-size: 12px;
                                 }
                               }
 
@@ -602,9 +715,9 @@ const TabContent = ({ isActive, id, product }) => {
                                               accessory: filteredProperties[0]
                                                 .accessory__name
                                                 ? [
-                                                    filteredProperties[0]
-                                                      .accessory__name,
-                                                  ]
+                                                  filteredProperties[0]
+                                                    .accessory__name,
+                                                ]
                                                 : [],
                                             });
                                           }}
@@ -690,9 +803,9 @@ const TabContent = ({ isActive, id, product }) => {
                                               accessory: filteredProperties[0]
                                                 .accessory__name
                                                 ? [
-                                                    filteredProperties[0]
-                                                      .accessory__name,
-                                                  ]
+                                                  filteredProperties[0]
+                                                    .accessory__name,
+                                                ]
                                                 : [],
                                             });
                                           }}
@@ -706,8 +819,8 @@ const TabContent = ({ isActive, id, product }) => {
                                                 selected={
                                                   IdPrice.weight
                                                     ? parseFloat(
-                                                        IdPrice.weight,
-                                                      ) == parseFloat(weight)
+                                                      IdPrice.weight,
+                                                    ) == parseFloat(weight)
                                                     : null
                                                 }
                                               >
@@ -777,16 +890,16 @@ const TabContent = ({ isActive, id, product }) => {
                                                 weight: filteredProperties[0]
                                                   .weight
                                                   ? [
-                                                      filteredProperties[0]
-                                                        .weight,
-                                                    ]
+                                                    filteredProperties[0]
+                                                      .weight,
+                                                  ]
                                                   : [],
                                                 accessory: filteredProperties[0]
                                                   .accessory__name
                                                   ? [
-                                                      filteredProperties[0]
-                                                        .accessory__name,
-                                                    ]
+                                                    filteredProperties[0]
+                                                      .accessory__name,
+                                                  ]
                                                   : [],
                                               });
                                             }
@@ -805,7 +918,7 @@ const TabContent = ({ isActive, id, product }) => {
                                                     selected={
                                                       IdPrice.accessory
                                                         ? IdPrice.accessory ==
-                                                          accessory
+                                                        accessory
                                                         : null
                                                     }
                                                   >
@@ -821,12 +934,15 @@ const TabContent = ({ isActive, id, product }) => {
                                 {product.data.attributes.length > 0 && (
                                   <>
                                     <hr />
+                                    <br />
+                                    <br />
                                     <p>ویژگی</p>
 
                                     <div
                                       className="row gx-6"
                                       style={{
                                         padding: "7px",
+                                       
                                       }}
                                     >
                                       <ul className="flex-fix">
@@ -934,6 +1050,64 @@ const TabContent = ({ isActive, id, product }) => {
         product={product}
         idPrice={IdPrice.id}
       />
+
+      {/* دکمه سبد خرید شناور برای موبایل */}
+      
+      {isMobile && (
+        <div 
+          style={{
+            position: 'fixed',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            background: 'white',
+            padding: '12px 16px',
+            boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.15)',
+            zIndex: '1000',
+            display: 'flex',
+            gap: '12px',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderTop: '2px solid #f0f0f0',
+            marginBottom:"72px",
+            borderRadius:"24px"
+          }}
+        >
+          <div style={{ flex: '1' }}>
+            <NumberFormat
+              style={{
+                fontWeight: "bold",
+                fontSize: "18px",
+                color: "#880a0a",
+              }}
+              displayType={"text"}
+              thousandSeparator={true}
+              suffix={" تومان"}
+              value={round(IdPrice.price / 10, 0)}
+            />
+          </div>
+          <button
+            onClick={handleAdd}
+            style={{
+              background: 'linear-gradient(135deg, #880a0a 0%, #a01010 100%)',
+              color: 'white',
+              border: 'none',
+              padding: '12px 24px',
+              borderRadius: '12px',
+              fontWeight: '600',
+              fontSize: '14px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              boxShadow: '0 4px 15px rgba(136, 10, 10, 0.3)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            افزودن به سبد
+          </button>
+        </div>
+      )}
     </>
   );
 };
