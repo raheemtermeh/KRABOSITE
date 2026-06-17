@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "/assets/img/icons/numbers/num1.svg",
+    "number": "20",
+    "operator": "M+",
+    "title": "Monthly Visitors"
+  },
+  {
+    "icon": "/assets/img/icons/numbers/num2.svg",
+    "number": "50",
+    "operator": "%",
+    "title": "Monthly Visits Growth"
+  },
+  {
+    "icon": "/assets/img/icons/numbers/num3.svg",
+    "number": "100",
+    "operator": "M+",
+    "title": "happy users from world"
+  },
+  {
+    "icon": "/assets/img/icons/numbers/num4.svg",
+    "number": "100",
+    "operator": "+",
+    "title": "worldwide basement"
+  }
+]

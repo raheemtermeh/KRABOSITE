@@ -1,0 +1,15 @@
+[
+  { "icon": "pe-7s-umbrella", "text": "Animation" },
+  { "icon": "pe-7s-users", "text": "Team Member" },
+  { "icon": "pe-7s-speaker", "text": "Testimonials" },
+  { "icon": "pe-7s-search", "text": "Search Input" },
+  { "icon": "pe-7s-play", "text": "Video Popup" },
+  { "icon": "pe-7s-bell", "text": "Pricing Tables" },
+  { "icon": "pe-7s-coffee", "text": "Countdown" },
+  { "icon": "pe-7s-headphones", "text": "Custom Support" },
+  { "icon": "pe-7s-switch", "text": "Unique Animation" },
+  { "icon": "pe-7s-map-marker", "text": "Google Maps" },
+  { "icon": "pe-7s-menu", "text": "Creative Menu" },
+  { "icon": "pe-7s-mouse", "text": "Easy Customisation" },
+  { "icon": "pe-7s-paint-bucket", "text": "Gradient Colors" }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "image": "/assets/img/icons/features/1.png",
+    "title": "Store Hours and Vacation",
+    "descripition": "Ideal for businesses that are seasonal or operate between fixed hours."
+  },
+  {
+    "image": "/assets/img/icons/features/2.png",
+    "title": "Coupon Management",
+    "descripition": "Set up irresistible deals and offers with flexible discount promo codes."
+  },
+  {
+    "image": "/assets/img/icons/features/3.png",
+    "title": "Product Import and Export",
+    "descripition": "Import products from and export products to CSV from vendor dashboard."
+  },
+  {
+    "image": "/assets/img/icons/features/4.png",
+    "title": "Inquiry and Support Ticket System",
+    "descripition": "Interaction with sellers help buyers to make better purchase decisions."
+  },
+  {
+    "image": "/assets/img/icons/features/5.png",
+    "title": "Membership Subscription",
+    "descripition": "Offer membership plans for sellers, free and paid. Accept recurring fees."
+  },
+  {
+    "image": "/assets/img/icons/features/6.png",
+    "title": "Invoice and Shipping Labels",
+    "descripition": "Order fulfillment made easy with store invoices and shipping labels."
+  },
+  {
+    "image": "/assets/img/icons/features/7.png",
+    "title": "GEO Location and Radius Search",
+    "descripition": "Allow searching products or services near the user’s current location."
+  },
+  {
+    "image": "/assets/img/icons/features/8.png",
+    "title": "Shipment and Delivery",
+    "descripition": "Share tracking of deliveries, notify when shipping status changes."
+  }
+]

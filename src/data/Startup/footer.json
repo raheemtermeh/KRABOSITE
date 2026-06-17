@@ -1,0 +1,22 @@
+{
+  "address": "223 Thatcher Road St, Manhattan",
+  "phone": "+031 5689 89 98",
+  "email": "contact@itecksolution.co",
+  "services": [
+    { "link": "#", "title": "SEO Analysis" },
+    { "link": "#", "title": "Content Strategy" },
+    { "link": "#", "title": "Growth Hacking" },
+    { "link": "#", "title": "Social Media" },
+    { "link": "#", "title": "Web Design & Develoment" },
+    { "link": "#", "title": "Google/FB Ads" }
+  ],
+  "information": [
+    { "link": "/page-about-5", "title": "About Itekseo" },
+    { "link": "#", "title": "Investors" },
+    { "link": "/page-blog-5", "title": "Blog" },
+    { "link": "/page-contact-5", "title": "Contact" },
+    { "link": "/page-about-5", "title": "How It Works" },
+    { "link": "#", "title": "Pricing Plan" },
+    { "link": "#", "title": "Covid-19 Update" }
+  ]
+}

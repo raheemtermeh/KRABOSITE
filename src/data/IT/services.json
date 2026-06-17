@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "image": "/assets/img/icons/serv_icons/7.png",
+      "title": "IT Consultation",
+      "desc": "We provide best IT solutions suit for any type of business as stragegy, management, etc",
+      "tags": ["Strategy", "Consultation", "Management", "Infrastructure"]
+    },
+    {
+      "image": "/assets/img/icons/serv_icons/8.png",
+      "title": "Software Development",
+      "desc": "We provide best IT solutions suit for any type of business as stragegy, management, etc",
+      "tags": ["Ecommerce", "Landing Page", "CMS", "Plugin", "VR/AR", "iOS & Android"]
+    },
+    {
+      "image": "/assets/img/icons/serv_icons/9.png",
+      "title": "Data Security",
+      "desc": "We provide best IT solutions suit for any type of business as stragegy, management, etc",
+      "tags": ["Management", "Backup & Recovery", "Transfer", "Storerage", "Hosting & VPS"]
+    }
+  ],
+  "works": [
+    {
+      "image": "/assets/img/projects/1.png",
+      "title": "Rento Car Rental Dashboard",
+      "tags": ["Landing Page, ", "UI/UX Design"]
+    },
+    {
+      "image": "/assets/img/projects/2.png",
+      "title": "Analys & Backup Blockchain",
+      "tags": ["data security, ", "IT consultation"]
+    }
+  ]
+}

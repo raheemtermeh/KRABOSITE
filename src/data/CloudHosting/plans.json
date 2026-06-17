@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Starter",
+    "description": "Best price for a basic site",
+    "price": "49.00",
+    "highlight": "With a 3 Year term (40% savings)",
+    "text": "You pay $49.00/mo today renews june 2024 for $59.00/mo",
+    "features": [
+      { "value": "01", "title": "Website Design" },
+      { "value": "50 GB", "title": "Storage" },
+      { "value": "Unlimited", "title": "Bandwidth" },
+      { "value": "100", "title": "FTP Users" }
+    ]
+  },
+  {
+    "title": "Economy",
+    "description": "Best price for a basic site",
+    "price": "59.00",
+    "highlight": "With a 3 Year term (45% savings)",
+    "text": "You pay $49.00/mo today renews june 2024 for $59.00/mo",
+    "features": [
+      { "value": "01", "title": "Website Design" },
+      { "value": "50 GB", "title": "Storage" },
+      { "value": "Unlimited", "title": "Bandwidth" },
+      { "value": "100", "title": "FTP Users" }
+    ]
+  },
+  {
+    "title": "Deluxe",
+    "description": "Best price for a basic site",
+    "price": "199.00",
+    "highlight": "With a 3 Year term (40% savings)",
+    "text": "You pay $49.00/mo today renews june 2024 for $59.00/mo",
+    "features": [
+      { "value": "01", "title": "Website Design" },
+      { "value": "50 GB", "title": "Storage" },
+      { "value": "Unlimited", "title": "Bandwidth" },
+      { "value": "100", "title": "FTP Users" }
+    ]
+  }
+]

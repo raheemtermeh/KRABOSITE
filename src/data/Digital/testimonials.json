@@ -1,0 +1,23 @@
+[
+  {
+    "userImg": "/assets/img/testimonials/user1.jpeg",
+    "stars": 5,
+    "comment": "Iteck provide perfect IT solutions, fast process and affordable price. We’re really satisfied!",
+    "username": "Ibrahima K.",
+    "position": "Senior Marketing at Amazon"
+  },
+  {
+    "userImg": "/assets/img/testimonials/user2.jpeg",
+    "stars": 5,
+    "comment": "Iteck - 1st my choice for cloud services method",
+    "username": "Ben S.",
+    "position": "CEO at ThemesCamp"
+  },
+  {
+    "userImg": "/assets/img/testimonials/user3.jpeg",
+    "stars": 5,
+    "comment": "Our profit increased so much. Really Awesome!",
+    "username": "Alexander A.",
+    "position": "Tech Leader of Traveloka"
+  }
+]

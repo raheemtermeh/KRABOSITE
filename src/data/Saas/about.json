@@ -1,0 +1,18 @@
+{
+  "lineLinks": [
+    "Sales Breakdown & Funnel",
+    "Abadoned Carts",
+    "Revenue by Channel & Devices",
+    "Sales Forecast"
+  ],
+  "list": [
+    { "icon": "bi bi-check2", "title": "100% Guarantee Secure Payment" },
+    { "icon": "bi bi-check2", "title": "1% Extra Fees For All" },
+    { "icon": "bi bi-check2", "title": "Support Dispute & Refund 24/7" }
+  ],
+  "texts": {
+    "text1": "Dashboards are meant to be personal tools for website managers and suppliers to enjoy, and are therefore largely modifiable.",
+    "text2": "When it comes to customer actions, website administrators can choose the permissions of each supplier, allowing them to limit or empower commerce activity as needed."
+  },
+  "number": "42,500+"
+}

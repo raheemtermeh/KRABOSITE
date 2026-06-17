@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Product Designer",
+    "description": "We’re looking for a mid-level product designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "Wesite Developer",
+    "description": "We’re looking for a mid-level product designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k",
+    "trend": true
+  },
+  {
+    "title": "Game Developer",
+    "description": "We’re looking for a mid-level product designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  },
+  {
+    "title": "UI & UX Designer",
+    "description": "We’re looking for a mid-level product designer to join our team",
+    "type": "Full-time",
+    "salary": "10k - $20k"
+  }
+]

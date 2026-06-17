@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "pay1",
+      "text": "Virtual Account",
+      "target": "pay1"
+    },
+    {
+      "id": "pay2",
+      "text": "Credit Card",
+      "target": "pay2"
+    },
+    {
+      "id": "pay3",
+      "text": "E-Wallet",
+      "target": "pay1"
+    },
+    {
+      "id": "pay4",
+      "text": "Direct Debit",
+      "target": "pay2"
+    },
+    {
+      "id": "pay5",
+      "text": "QR Codes",
+      "target": "pay1"
+    },
+    {
+      "id": "pay6",
+      "text": "Cash Retail",
+      "target": "pay2"
+    }
+  ],
+  "tabs": [
+    {
+      "id": "pay1",
+      "image": "/assets/img/services/feat14_img1.png",
+      "text": "Virtual Account",
+      "items": [
+        "Check out easily with just an email and password",
+        "Buyer Protection gives full refunds on purchases",
+        "24/7 security guards every transaction"
+      ]
+    },
+    {
+      "id": "pay2",
+      "image": "/assets/img/services/feat14_img1.png",
+      "text": "Credit Card",
+      "items": [
+        "Check out easily with just an email and password",
+        "Buyer Protection gives full refunds on purchases",
+        "24/7 security guards every transaction"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "totalRating": 4.7,
+  "totalReviews": 49786,
+  "testimonials": [
+    {
+      "stars": 5,
+      "content": "It’s been a great experience. Starting my own business was daunting, but knowing that i could get a starter web page with my domain for free helped me launch my business quicker",
+      "author": {
+        "image": "/assets/img/testimonials/user8.png",
+        "position": "Head Of Idea",
+        "name": "Alonso D.Dowson"
+      }
+    },
+    {
+      "stars": 5,
+      "content": "From customer service to website building, their service is awesome. I would recommend any website builder to use this site.",
+      "author": {
+        "image": "/assets/img/testimonials/user7.png",
+        "position": "Head Of Idea",
+        "name": "Miranda H. Halim"
+      }
+    },
+    {
+      "stars": 5,
+      "content": "Iteck make this so easy. Templates are slick and easy to modify. Perfect for a small business or personal website development.",
+      "author": {
+        "image": "/assets/img/testimonials/user9.png",
+        "position": "Head Of Idea",
+        "name": "Rosalina D. William"
+      }
+    }
+  ]
+}

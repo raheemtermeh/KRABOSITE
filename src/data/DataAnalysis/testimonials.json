@@ -1,0 +1,29 @@
+[
+  {
+    "stars": 5,
+    "text": "It uses a directory of over 20 latin words combine a half of model sentence structures.",
+    "author": {
+      "image": "/assets/img/testimonials/user8.png",
+      "position": "Head Of Idea",
+      "name": "Alonso D. Dowson"
+    }
+  },
+  {
+    "stars": 5,
+    "text": "It uses a directory of over 20 latin words combine a half of model sentence structures.",
+    "author": {
+      "image": "/assets/img/testimonials/user7.png",
+      "position": "CEO",
+      "name": "Miranda H. Halim"
+    }
+  },
+  {
+    "stars": 5,
+    "text": "It uses a directory of over 20 latin words combine a half of model sentence structures.",
+    "author": {
+      "image": "/assets/img/testimonials/user9.png",
+      "position": "Founder",
+      "name": "Rosalina D. William"
+    }
+  }
+]

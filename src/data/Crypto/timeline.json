@@ -1,0 +1,34 @@
+[
+  {
+    "image": "/assets/img/icons/tl1.png",
+    "title": {
+      "partOne": "Idea for start",
+      "partTwo": "ICO Co."
+    },
+    "year": "2012"
+  },
+  {
+    "image": "/assets/img/icons/tl2.png",
+    "title": {
+      "partOne": "Traditional",
+      "partTwo": "Launch"
+    },
+    "year": "2015"
+  },
+  {
+    "image": "/assets/img/icons/tl3.png",
+    "title": {
+      "partOne": "Get 1M+ Coin",
+      "partTwo": "Listing"
+    },
+    "year": "2018"
+  },
+  {
+    "image": "/assets/img/icons/tl4.png",
+    "title": {
+      "partOne": "Number #1",
+      "partTwo": "Market"
+    },
+    "year": "2022"
+  }
+]

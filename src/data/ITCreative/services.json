@@ -1,0 +1,26 @@
+[
+  {
+    "image": "/assets/img/icons/serv_icons/21.png",
+    "icon": "fas fa-globe",
+    "title": "Networking Solution",
+    "description": "Convoy with popular belief is a not rendom idea."
+  },
+  {
+    "image": "/assets/img/icons/serv_icons/22.png",
+    "icon": "fas fa-book",
+    "title": "Business Solution",
+    "description": "Convoy with popular belief is a not rendom idea."
+  },
+  {
+    "image": "/assets/img/icons/serv_icons/23.png",
+    "icon": "fas fa-bell",
+    "title": "Group Tasking",
+    "description": "Convoy with popular belief is a not rendom idea."
+  },
+  {
+    "image": "/assets/img/icons/serv_icons/24.png",
+    "icon": "fas fa-users",
+    "title": "Financial Service",
+    "description": "Convoy with popular belief is a not rendom idea."
+  }
+]

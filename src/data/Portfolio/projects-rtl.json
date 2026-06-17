@@ -1,0 +1,85 @@
+{
+  "filters": [
+    { "title": "الكل", "filter": "all" },
+    { "title": "استشارات تكنولوجيا المعلومات", "filter": ".consultation" },
+    { "title": "أمن المعلومات", "filter": ".security" },
+    { "title": "تطوير الموقع", "filter": ".website" },
+    { "title": "UI/UX تصميم", "filter": ".design" },
+    { "title": "الخدمات السحابية", "filter": ".cloud" },
+    { "title": "برمجة الالعاب", "filter": ".development" }
+  ],
+  "projects": [
+    {
+      "filter": "security consultation",
+      "image": "/assets/img/projects/prog/1.jpeg",
+      "title": "ترقية البنية التحتية ",
+      "type": "استشارات تكنولوجيا المعلومات",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["الاستشارات", "إدارة"]
+    },
+    {
+      "filter": "design security",
+      "image": "/assets/img/projects/prog/2.png",
+      "title": "صفحة هبوط للعملات المشفرة",
+      "type": "تطوير الموقع, UI/UX تصميم",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["ووردبريس", "بي أتش بي", "HTML/CSS", "فيجما"]
+    },
+    {
+      "filter": "website development",
+      "image": "/assets/img/projects/prog/3.jpeg",
+      "title": "لعبة AR / VR حرب 1986",
+      "type": "تطوير الالعاب",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["الواقع الافتراضى", "ايفون & اندرويد", "تصميم 2D/3D"]
+    },
+    {
+      "filter": "cloud design",
+      "image": "/assets/img/projects/4.png",
+      "title": "Okpay المحفظة الإلكترونية الأمثل",
+      "type": "تحليل البيانات",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["تحليل البيانات", "كتابة المحتوى"]
+    },
+    {
+      "filter": "website development cloud",
+      "image": "/assets/img/projects/5.png",
+      "title": "لوحة تحكم للماركت",
+      "type": "تصميم وتطوير الموقع",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["ووردبريس", "بي أتش بي", "HTML/CSS", "فيجما"]
+    },
+    {
+      "filter": "design consultation",
+      "image": "/assets/img/projects/7.png",
+      "title": "تشفير Blockchain",
+      "type": "أمن المعلومات",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["حماية", "إدارة", "النسخ الاحتياطي والاسترداد"]
+    },
+    {
+      "filter": "cloud design",
+      "image": "/assets/img/projects/1.png",
+      "title": "لوحة تحكم تاجير سيارات",
+      "type": "تصميم UI/UX",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["HTML/CSS", "فيجما"]
+    },
+    {
+      "filter": "security cloud",
+      "image": "/assets/img/projects/2.png",
+      "title": "تشفير Blockchain",
+      "type": "أمن المعلومات, استشارات تكنولوجيا المعلومات",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["أمن المعلومات", "بايثون", "استرداد البيانات"]
+    },
+    {
+      "filter": "development consultation",
+      "image": "/assets/img/projects/6.png",
+      "title": "تطوير روبوتات",
+      "type": "الذكاء الاصطناعي",
+      "details": "ثق في عقولنا العليا للتخلص من نقاط ضعف سير العمل ، وتنفيذ التكنولوجيا والتطبيق الجديد.",
+      "tags": ["AI", "الذكاء الاصطناعي"]
+    }
+  ]
+}

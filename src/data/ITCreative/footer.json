@@ -1,0 +1,33 @@
+{
+  "text": "Our highly skilled development teams specialized in Java, PHP, React, Angular and AWS help you accelarate.",
+  "links": [
+    { "href": "#", "text": "Online Marketing" },
+    { "href": "#", "text": "Technology" },
+    { "href": "#", "text": "Business" },
+    { "href": "#", "text": "Content strategy" },
+    { "href": "#", "text": "Development" },
+    { "href": "#", "text": "Advertising Strategy" }
+  ],
+  "links2": [
+    { "href": "#", "text": "Game Development" },
+    { "href": "#", "text": "Application Design" },
+    { "href": "#", "text": "IT Solutions" },
+    { "href": "#", "text": "Tecture & Pattern" },
+    { "href": "#", "text": "Data Analysis" }
+  ],
+  "morePages": [
+    { "href": "#", "text": "About Us" },
+    { "href": "#", "text": "Blogs" },
+    { "href": "#", "text": "Shop" },
+    { "href": "#", "text": "Contact" },
+    { "href": "#", "text": "Privacy Policy" },
+    { "href": "#", "text": "Terms of Use" }
+  ],
+  "morePages2": [
+    { "href": "#", "text": "Refund Policy" },
+    { "href": "#", "text": "Terms Conditions" },
+    { "href": "#", "text": "Join Us", "label": "hiring" },
+    { "href": "#", "text": "Get In Touch" },
+    { "href": "#", "text": "FAQ Page" }
+  ]
+}

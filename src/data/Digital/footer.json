@@ -1,0 +1,25 @@
+{
+  "address": "58 Howard St,  San Francisco, CA 941",
+  "phone": "(+23) 5535 68 68",
+  "email": "contact@Iteck.co",
+  "services": [
+    "IT Consultations",
+    "Data Security",
+    "Website Development",
+    "UI/UX Design",
+    "Cloud Services",
+    "Game Development",
+    "CRM & Software"
+  ],
+  "information": [
+    "About Iteck",
+    "Investors",
+    "Blog",
+    "Career",
+    "Contact",
+    "Affiliate Program",
+    "How It Works",
+    "Pricing Plan",
+    "Covid-19 Update"
+  ]
+}

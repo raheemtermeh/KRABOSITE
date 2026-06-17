@@ -1,0 +1,26 @@
+[
+  {
+    "image": "/assets/img/icons/numbers/8.png",
+    "value": 3,
+    "operator": "M+",
+    "title": "Projects Executed"
+  },
+  {
+    "image": "/assets/img/icons/numbers/9.png",
+    "value": 5,
+    "operator": "M+",
+    "title": "Data Analytics"
+  },
+  {
+    "image": "/assets/img/icons/numbers/10.png",
+    "value": 3,
+    "operator": "M+",
+    "title": "Data Management"
+  },
+  {
+    "image": "/assets/img/icons/numbers/11.png",
+    "value": 100,
+    "operator": "K+",
+    "title": "Happy Users"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "01",
+    "image": "/assets/img/icons/fe1.png",
+    "title": {
+      "part1": "Powerful Security",
+      "part2": "System Built"
+    }
+  },
+  {
+    "id": "02",
+    "image": "/assets/img/icons/fe2.png",
+    "title": {
+      "part1": "Easy Search Engine",
+      "part2": "Optimize"
+    }
+  },
+  {
+    "id": "03",
+    "image": "/assets/img/icons/fe3.png",
+    "title": {
+      "part1": "Uncommon Layout",
+      "part2": "& Creative"
+    }
+  },
+  {
+    "id": "04",
+    "image": "/assets/img/icons/fe4.png",
+    "title": {
+      "part1": "Save Time & Big",
+      "part2": "Data"
+    }
+  }
+]
