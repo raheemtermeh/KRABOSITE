@@ -18,6 +18,8 @@ import useFetchCartItems from "@components/Product/useFetchCartItems";
 import ImageList from "@components/imageList/ImageList";
 import GoldRangBox from "@components/GoldRangBox/GoldRangBox";
 import ServiceBox from "@components/ServiceBox";
+import { defaultHeader } from "@data/headerData";
+
 
 // --- تابع کمکی برای تلاش مجدد (Retry) ---
 async function fetchWithRetry(url, retries = 3, delay = 1500) {
@@ -120,11 +122,18 @@ const HomeAppLanding = ({ home }) => {
 
 export default HomeAppLanding;
 
-export async function getStaticProps() {
-  const url = "https://python.krabo.gold/ui/home/home";
+export async function getServerSideProps() {
   try {
-    // استفاده از تابع Retry با ۳ بار تلاش و تاخیر ۱.۵ ثانیه‌ای بین هر تلاش
-    const result_Home = await fetchWithRetry(url, 3, 1500);
+    const response = await fetch("https://python.krabo.gold/ui/home/home");
+    
+    if (!response.ok) throw new Error("API not available");
+    
+    const result_Home = await response.json();
+    
+    // اگر API هدر را برنگرداند، از defaultHeader استفاده کن
+    if (!result_Home?.data?.header) {
+      result_Home.data.header = defaultHeader;
+    }
     
     return {
       props: {
@@ -134,19 +143,26 @@ export async function getStaticProps() {
           error: false,
         },
       },
-      revalidate: 60,
     };
   } catch (error) {
-    console.error("خطای نهایی در دریافت داده‌های صفحه اصلی:", error);
+    console.error("خطا در دریافت داده‌های صفحه اصلی:", error);
+    
+    // در صورت خطا، یک آبجکت با defaultHeader برمی‌گردانیم
+    // تا صفحه سفید نشود و حداقل منو نمایش داده شود
     return {
       props: {
         home: {
-          success: false,
+          data: {
+            data: {
+              header: defaultHeader,
+              slider: [],
+              box: [],
+            },
+          },
+          success: true, // true می‌گذاریم تا صفحه رندر شود
           error: true,
         },
       },
-      // حتی در صورت خطا هم revalidate می‌گذاریم تا سرور بک‌اند تحت فشار ریکوئست‌های مداوم قرار نگیرد
-      revalidate: 60, 
     };
   }
 }

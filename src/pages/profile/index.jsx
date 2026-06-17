@@ -31,7 +31,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import MainLayout from "@layouts/Main";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
-
+import {defaultHeader} from "@data/headerData"
 export default function Profile({ header }) {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState("");
@@ -1065,31 +1065,15 @@ export default function Profile({ header }) {
 }
 
 export async function getServerSideProps(context) {
-  const fs = require("fs");
-  const path = require("path");
-
-  let header = {};
-
-  try {
-    const headerPath = path.join(process.cwd(), "header.json");
-    const data = fs.readFileSync(headerPath, "utf-8");
-    header = {
-      status: 200,
-      success: true,
-      data: JSON.parse(data),
-    };
-  } catch (error) {
-    header = {
-      status: 500,
-      message: "not found",
-      success: false,
-      data: { menu: [] }
-    };
-  }
-
+  // دیگر نیازی به fs.readFileSync نیست!
+  // داده مستقیماً از فایل JS لود می‌شود - بدون ارور، بدون کرش
   return {
     props: {
-      header: header,
+      header: {
+        status: 200,
+        success: true,
+        data: defaultHeader,
+      },
     },
   };
 }
