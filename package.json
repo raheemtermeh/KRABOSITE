@@ -22,6 +22,7 @@
     "lightgallery": "^2.5.0",
     "lucide-react": "^1.14.0",
     "next": "^12.0.7",
+    "nprogress": "^0.2.0",
     "pdfmake": "^0.2.14",
     "rc-slider": "^10.0.1",
     "react": "^17.0.2",

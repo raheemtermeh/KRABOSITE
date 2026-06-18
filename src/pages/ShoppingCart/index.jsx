@@ -183,25 +183,6 @@ const ShoppingCart = ({ header }) => {
   const prevStep = () => setStep(step - 1);
 
   const renderStep = () => {
-    let header = {};
-
-    const headerPath = "D:/Aida/projects/krabo-frontend/header.json";
-
-    try {
-      const data = fs.readFileSync(headerPath, "utf-8");
-      header = {
-        status: 200,
-        success: true,
-        data: JSON.parse(data),
-      };
-    } catch (error) {
-      header = {
-        status: 500,
-        message: "not found",
-        success: false,
-      };
-    }
-
     switch (step) {
       case 1:
         return (
@@ -224,22 +205,16 @@ const ShoppingCart = ({ header }) => {
               nextStep={nextStep}
               prevStep={prevStep}
               setId={setId}
-              factorId={factorId}        // ✅ اضافه کن
+              factorId={factorId}
               setFactorId={setFactorId}
+              setStep={setStep}
             />
           </>
         );
       case 3:
         return (
           <>
-            <Factor
-              sum={sum}
-              cartItems={cartItems}
-              userInfo={userInfo}
-              paymentMethod={paymentMethod}
-              prevStep={prevStep}
-              id={id}
-            />
+            <Factor id={factorId} />
           </>
         );
       case 4:
@@ -1194,6 +1169,51 @@ const ShoppingCart = ({ header }) => {
             padding: 16px 24px;
           }
 
+        /* ===== دکمه بازگشت به صفحه اصلی ===== */
+        .home-back-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          color: #880A0A;
+          border: 2px solid #F5E6C8;
+          padding: 10px 22px;
+          border-radius: 50px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 15px rgba(136, 10, 10, 0.08);
+          margin-bottom: 24px;
+          font-family: inherit;
+        }
+
+        .home-back-btn:hover {
+          background: white;
+          border-color: #C9A961;
+          transform: translateX(-5px);
+          box-shadow: 0 6px 20px rgba(136, 10, 10, 0.15);
+          color: #6b0506;
+        }
+
+        .home-back-btn svg {
+          transition: transform 0.3s ease;
+        }
+
+        .home-back-btn:hover svg {
+          transform: translateX(-3px);
+        }
+
+        @media (max-width: 768px) {
+          .home-back-btn {
+            padding: 8px 16px;
+            font-size: 13px;
+            margin-bottom: 16px;
+          }
+        }
+
           .btn-next, .btn-back {
             width: 100%;
             justify-content: center;
@@ -1203,6 +1223,26 @@ const ShoppingCart = ({ header }) => {
 
       <div className="cart-page">
         <div className="cart-container">
+
+          <button
+            onClick={() => router.push('/')}
+            className="home-back-btn"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span>بازگشت به صفحه اصلی</span>
+          </button>
+
           {/* Page Header */}
           <div className="page-header">
             <div className="header-badge">
@@ -1359,7 +1399,6 @@ const CartReview = ({
         <div className="total-summary">
           <div className="total-content">
             <div className="total-label">
-
               جمع کل سبد خرید
             </div>
             <div className="total-value-box">
@@ -1399,7 +1438,7 @@ const CartReview = ({
 );
 
 // Step 2: User Info Form
-const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factorId, setFactorId }) => {
+const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factorId, setFactorId, setStep }) => {
   const router = useRouter();
   const [addresses, setAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState("");
@@ -1445,7 +1484,6 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factor
   const handleAddressChange = (e) => {
     setShowAddressError(false);
     const { value } = e.target;
-    console.log(`test -> ${e.target.value}`);
     if (value === "new") {
       setShowNewAddressForm(true);
       setSelectedAddress("");
@@ -1490,7 +1528,6 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factor
       console.error("Failed to add address:", error);
     }
   };
-  ///////////////
 
   async function create_pre_invoice() {
     try {
@@ -1519,11 +1556,11 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factor
         );
 
         const newFactorId = response?.data?.data?.id;
-        setFactorId(newFactorId); // ✅ ذخیره id فاکتور در state
-        setId(newFactorId); // ذخیره در state والد (اختیاری)
-
-        // ❌ حذف این خط:
-        // router.push(`/factor/${response?.data?.data?.id}`);
+        setFactorId(newFactorId);
+        setId(newFactorId);
+        router.push(`/factor/${newFactorId}`);
+        // ✅ رفتن به مرحله 3 برای نمایش فاکتور
+        setStep(3);
       } else {
         userInfo.name === "" && setShowNameError(true);
         userInfo.address === "" && setShowAddressError(true);
@@ -1665,6 +1702,7 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factor
                     </svg>
                   </button>
                 </div>
+
                 <div className="modal-body">
                   <input
                     type="text"
@@ -1732,66 +1770,29 @@ const UserInfoForm = ({ userInfo, setUserInfo, nextStep, prevStep, setId, factor
               </div>
             </div>
           )}
-          {/* 
-          <div>
-            <h style={{ margin: 10 }}>پرداخت</h>
-          </div> */}
         </form>
       </div>
 
       {/* Action Buttons */}
-      {/* دکمه‌های عملیات */}
       <div className="action-section">
-        {!factorId ? (
-          // اگر فاکتور هنوز ایجاد نشده
-          <button className="btn-next" onClick={create_pre_invoice}>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
-            ایجاد پیش فاکتور
-          </button>
-        ) : (
-          // ✅ اگر فاکتور ایجاد شده - دکمه‌های پرداخت و مشاهده فاکتور
-          <>
-            <button
-              style={{
-                backgroundColor: "rgb(111 10 10)",
-                color: "white",
-                border: "none",
-                margin: "10px",
-                padding: "10px",
-                borderRadius: "10px",
-                fontSize: "28px",
-              }}
-              onClick={() => {
-                window.open(
-                  `http://krabo.gold:3421/api/order/go-to-geteway/?id=${factorId}`,
-                  "_blank"
-                );
-              }}
-            >
-              پرداخت
-            </button>
-            <button
-              className="btn-next"
-              onClick={() => router.push(`/factor/${factorId}`)}
-            >
-              مشاهده فاکتور
-            </button>
-          </>
-        )}
+        <button className="btn-next" onClick={create_pre_invoice}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          ایجاد پیش فاکتور
+        </button>
 
         <button className="btn-back" onClick={prevStep}>
           <svg

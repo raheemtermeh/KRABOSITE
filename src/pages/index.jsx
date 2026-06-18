@@ -123,14 +123,12 @@ const HomeAppLanding = ({ home }) => {
 export default HomeAppLanding;
 
 export async function getServerSideProps() {
+  const url = "https://python.krabo.gold/ui/home/home";
+  
   try {
-    const response = await fetch("https://python.krabo.gold/ui/home/home");
+    // ✅ استفاده از تابع Retry که خودتان نوشته‌اید
+    const result_Home = await fetchWithRetry(url, 3, 1500);
     
-    if (!response.ok) throw new Error("API not available");
-    
-    const result_Home = await response.json();
-    
-    // اگر API هدر را برنگرداند، از defaultHeader استفاده کن
     if (!result_Home?.data?.header) {
       result_Home.data.header = defaultHeader;
     }
@@ -147,8 +145,6 @@ export async function getServerSideProps() {
   } catch (error) {
     console.error("خطا در دریافت داده‌های صفحه اصلی:", error);
     
-    // در صورت خطا، یک آبجکت با defaultHeader برمی‌گردانیم
-    // تا صفحه سفید نشود و حداقل منو نمایش داده شود
     return {
       props: {
         home: {
@@ -159,7 +155,7 @@ export async function getServerSideProps() {
               box: [],
             },
           },
-          success: true, // true می‌گذاریم تا صفحه رندر شود
+          success: true,
           error: true,
         },
       },
