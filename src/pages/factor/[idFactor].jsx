@@ -261,7 +261,7 @@ function Factor({ header }) {
           style={{ textAlign: "center" }}
         >
           {/* ✅ دکمه پرداخت جدید (بر اساس کد دوم) */}
-          <button
+          {/* <button
             style={{
               backgroundColor: "rgb(111 10 10)",
               color: "white",
@@ -279,7 +279,7 @@ function Factor({ header }) {
             }}
           >
             پرداخت
-          </button>
+          </button> */}
 
           <button
             className="btn mx-2"
