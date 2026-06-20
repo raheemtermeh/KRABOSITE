@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Link from "next/link";
@@ -9,11 +8,17 @@ const GlobalStyles = createGlobalStyle`
     width: 0;
     overflow: hidden;
     transition: width 0.3s ease;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0; /* تغییر به راست برای زبان فارسی (RTL) */
+    height: 100vh;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
   }
 
   .msb.show {
     width: 300px;
-    overflow: auto;
+    overflow-y: auto;
   }
 
   /* Additional styles */
@@ -27,6 +32,27 @@ const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    width: 100%;
+    text-align: right;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .accordion-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .accordion-collapse.show-content {
+    max-height: 1000px; /* مقدار تقریبی برای انیمیشن روان */
+    transition: max-height 0.5s ease-in;
   }
 
   .menu-item-link {
@@ -34,8 +60,10 @@ const GlobalStyles = createGlobalStyle`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 5px 15px;
+    padding: 8px 25px;
     line-height: 1.5;
+    color: #333;
+    text-decoration: none;
   }
 
   /* Footer mobile styles */
@@ -63,15 +91,6 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
-  /* Menu title mobile */
-  .menu-title-mobile {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 19px;
-    border-bottom: 1px solid #880a0a;
-  }
-
   .li-footer {
     color: #212529;
   }
@@ -79,12 +98,24 @@ const GlobalStyles = createGlobalStyle`
   .li-footer.active {
     color: #880a0a;
   }
+
+  .static-link {
+    display: block;
+    padding: 15px 20px;
+    margin-top: 5px;
+    width: 95%;
+    color: #212529;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
 `;
 
 function FooterMobile({ location, header }) {
   const [isLogin, setIsLogin] = useState(false);
   const [number, setNumber] = useState(0);
   const [menuVisible, setMenuVisible] = useState(false);
+  // تعریف استیت برای ذخیره ایندکس منوی باز شده
+  const [openAccordion, setOpenAccordion] = useState(null);
 
   useEffect(() => {
     const userInfo = localStorage.getItem("userInfoKrabo");
@@ -98,114 +129,130 @@ function FooterMobile({ location, header }) {
     setMenuVisible(!menuVisible);
   };
 
+  const handleAccordionToggle = (index) => {
+    // اگر دوباره روی همون کلیک شد بسته بشه، در غیر این صورت منوی جدید باز بشه
+    setOpenAccordion(openAccordion === index ? null : index);
+  };
+
   return (
     <>
       <GlobalStyles />
-      
+
       {/* Side menu */}
-      <div className={`msb ${menuVisible ? "show" : ""}`} id="msb" style={{zIndex:1001}}>
-        <nav className="navbar navbar-default">
-          <div className="navbar-header" style={{textAlign:'center',color:"#2A0202",fontWeight:'bolder'}}>
+      <div
+        className={`msb ${menuVisible ? "show" : ""}`}
+        id="msb"
+        style={{ zIndex: 1001 }}
+      >
+        <nav className="navbar navbar-default" style={{ direction: "rtl" }}>
+          <div
+            className="navbar-header"
+            style={{
+              textAlign: "center",
+              color: "#2A0202",
+              padding: "15px 0",
+              fontWeight: "bolder",
+            }}
+          >
             <div className="brand-wrapper">
               <div className="brand-name-wrapper">
-                <a className="navbar-brand" href="#">
-                  منو کرابو
-                </a>
+                <span className="navbar-brand">منو کرابو</span>
               </div>
             </div>
           </div>
 
           {/* Render menu items */}
           {header?.menu?.length > 0 &&
-            header.menu.map((data_menu, index) => (
-              <div key={index} className="side-menu-container">
-                <div className="accordion" id={`accordion-${index}`}>
-                  <div className="accordion-item">
-                    <h2 className="accordion-header" id={`heading-${index}`}>
-                      <button
-                        className={`${
-                          // data_menu.menu_item?.length > 0
-                            // ?
-                             "accordion-button collapsed"
-                            // : "no-accordion"
-                        }`}
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target={`#collapse-${index}`}
-                        aria-expanded="false"
-                        aria-controls={`collapse-${index}`}
+            header.menu.map((data_menu, index) => {
+              const isOpen = openAccordion === index;
+              return (
+                <div key={index} className="side-menu-container">
+                  <div className="accordion">
+                    <div className="accordion-item">
+                      <h2 className="accordion-header">
+                        <button
+                          className="accordion-button"
+                          type="button"
+                          onClick={() => handleAccordionToggle(index)}
+                        >
+                          {data_menu.title}
+                          <span>{isOpen ? "▲" : "▼"}</span>
+                        </button>
+                      </h2>
+                      <div
+                        className={`accordion-collapse ${isOpen ? "show-content" : ""}`}
                       >
-                        {data_menu.title}
-                      </button>
-                    </h2>
-                    <div
-                      id={`collapse-${index}`}
-                      className="accordion-collapse collapse"
-                      aria-labelledby={`heading-${index}`}
-                    >
-                      <div className="accordion-body">
-                        {data_menu.menu_item?.map((menu_title, idx) => (
-                          <div key={idx}>
-                            <Link href="#">
-                              <a
+                        <div
+                          className="accordion-body"
+                          style={{ padding: "10px 0" }}
+                        >
+                          {data_menu.menu_item?.map((menu_title, idx) => (
+                            <div key={idx} style={{ marginBottom: "10px" }}>
+                              <span
                                 className="dropdown-item"
                                 style={{
                                   color: "#880a0a",
                                   fontWeight: "bolder",
+                                  padding: "5px 15px",
+                                  display: "block",
                                 }}
                               >
                                 • {menu_title.title}
-                              </a>
-                            </Link>
-                            {menu_title.item?.map((menu, subIdx) => (
-                              <Link key={subIdx} href={menu.url}>
-                                <a className="menu-item-link">{menu.name}</a>
-                              </Link>
-                            ))}
-                          </div>
-                        ))}
+                              </span>
+                              {menu_title.item?.map((menu, subIdx) => (
+                                <Link
+                                  key={subIdx}
+                                  href={menu.url}
+                                  passHref
+                                  legacyBehavior
+                                >
+                                  <a className="menu-item-link">{menu.name}</a>
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          
+              );
+            })}
+
           {/* Other static links */}
-          <Link href="/questions">
-            <a className="accordion-item" style={{ padding: 20, marginTop: 10, width: "95%" }}>
-              سوالات متداول
-            </a>
+          <Link href="/questions" passHref legacyBehavior>
+            <a className="static-link">سوالات متداول</a>
           </Link>
-          <Link href="/contactUs">
-            <a className="accordion-item" style={{ padding: 20, marginTop: 10, width: "95%" }}>
-              تماس با ما
-            </a>
+          <Link href="/contactUs" passHref legacyBehavior>
+            <a className="static-link">تماس با ما</a>
           </Link>
-          <Link href="/rules">
-            <a className="accordion-item" style={{ padding: 20, marginTop: 10, width: "95%" }}>
-              قوانین و مقررات
-            </a>
+          <Link href="/rules" passHref legacyBehavior>
+            <a className="static-link">قوانین و مقررات</a>
           </Link>
         </nav>
       </div>
 
       {/* Footer mobile */}
-      <div style={{zIndex:1002}} className="footer-mobile container-fluid d-md-none">
+      <div
+        style={{ zIndex: 1002 }}
+        className="footer-mobile container-fluid d-md-none"
+      >
         <ul className="show-mobile-flex" style={{ gap: "30px" }}>
-          <Link href="/">
+          <Link href="/" passHref legacyBehavior>
             <a>
-              <li className={`li-footer ${location === "home" ? "active" : ""}`}>
+              <li
+                className={`li-footer ${location === "home" ? "active" : ""}`}
+              >
                 <i className="bi bi-house" style={{ fontSize: "25px" }}></i>
-                کرابو
+                <div>کرابو</div>
               </li>
             </a>
           </Link>
           <li className="li-footer" onClick={toggleSideMenu}>
             <i className="bi bi-list" style={{ fontSize: "25px" }}></i>
-            دسته بندی
+            <div>دسته بندی</div>
           </li>
-          <Link href="/ShoppingCart">
+          <Link href="/ShoppingCart" passHref legacyBehavior>
             <a>
               <li className="li-footer" style={{ position: "relative" }}>
                 <i className="bi bi-cart" style={{ fontSize: "25px" }}></i>
@@ -223,15 +270,15 @@ function FooterMobile({ location, header }) {
                 >
                   {number}
                 </span>
-                سبد خرید
+                <div>سبد خرید</div>
               </li>
             </a>
           </Link>
-          <Link href={isLogin ? "/profile" : "/login"}>
+          <Link href={isLogin ? "/profile" : "/login"} passHref legacyBehavior>
             <a>
               <li className="li-footer">
                 <i className="bi bi-person" style={{ fontSize: "25px" }}></i>
-                حساب کاربری
+                <div>حساب کاربری</div>
               </li>
             </a>
           </Link>

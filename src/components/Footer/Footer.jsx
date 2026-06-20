@@ -220,7 +220,7 @@ const Footer = ({ noWave, rtl }) => {
     <>
       {/* باکس ویژگی‌ها - اضافه شده بالای فوتر */}
       <FeaturesBox />
-      
+
       {/* استایل‌های ریسپانسیو فوتر */}
       <style jsx>{`
         /* ریسپانسیو برای تبلت */
@@ -467,7 +467,7 @@ const Footer = ({ noWave, rtl }) => {
                 <ul className="list-none p-0 m-0">
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
-                      href="#"
+                      href="/contactUs"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       تماس با ما
@@ -475,7 +475,7 @@ const Footer = ({ noWave, rtl }) => {
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
-                      href="#"
+                      href="/aboutUs"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       آشنایی با کرابو{" "}
@@ -491,7 +491,7 @@ const Footer = ({ noWave, rtl }) => {
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
-                      href="#"
+                      href="/rules"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       قوانین و مقررات
@@ -499,7 +499,7 @@ const Footer = ({ noWave, rtl }) => {
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
                     <a
-                      href="#"
+                      href="/questions"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       سوالات متداول

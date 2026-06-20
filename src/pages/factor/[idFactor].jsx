@@ -248,25 +248,77 @@ function Factor({ header }) {
   const tableItems =
     productsFromProduct.length > 0
       ? productsFromProduct.map((p, i) => ({
-        id: i + 1,
-        name: p.product__name || p.product?.name || "-",
-        karat: p.product__karat || 18,
-        weight: p.property__weight || p.property?.weight || "-",
-        salary: p.property__salary || p.property?.salary || 0,
-        help_price: p.property__help_price || p.property?.help_price || 0,
-      }))
+          id: i + 1,
+          name: p.product__name || p.product?.name || "-",
+          karat: p.product__karat || 18,
+          weight: p.property__weight || p.property?.weight || "-",
+          salary: p.property__salary || p.property?.salary || 0,
+          help_price: p.property__help_price || p.property?.help_price || 0,
+        }))
       : itemsFromData.map((item, i) => ({
-        id: i + 1,
-        name: item.product || item.product__name || "-",
-        karat: item.karat || 18,
-        weight: item.property?.[0]?.weight || item.weight || "-",
-        salary: item.property?.[0]?.salary || item.salary || 0,
-        help_price: item.property?.[0]?.help_price || item.help_price || 0,
-      }));
+          id: i + 1,
+          name: item.product || item.product__name || "-",
+          karat: item.karat || 18,
+          weight: item.property?.[0]?.weight || item.weight || "-",
+          salary: item.property?.[0]?.salary || item.salary || 0,
+          help_price: item.property?.[0]?.help_price || item.help_price || 0,
+        }));
 
   const sum = myFactor?.data?.sum;
   const goldPrice = factorData?.item?.[0]?.gold_price;
   const isPaid = factorData?.pay_status;
+  const statusCode = factorData?.status_code;
+
+  // تابع کمکی برای دریافت وضعیت پرداخت
+  const getPaymentStatus = (code) => {
+    switch (code) {
+      case 0:
+        return {
+          text: "لغو شده",
+          color: "#dc3545",
+          bg: "#dc354515",
+          icon: "❌",
+        };
+      case 1:
+        return {
+          text: "پرداخت شده",
+          color: "#28a745",
+          bg: "#28a74515",
+          icon: "✅",
+        };
+      case 2:
+        return {
+          text: "در انتظار پرداخت",
+          color: "#ffc107",
+          bg: "#ffc10715",
+          icon: "⏳",
+        };
+      case 3:
+        return {
+          text: "ارسال شده",
+          color: "#17a2b8",
+          bg: "#17a2b815",
+          icon: "📦",
+        };
+      case 4:
+        return {
+          text: "پیش فاکتور",
+          color: "#6c757d",
+          bg: "#6c757d15",
+          icon: "📄",
+        };
+      default:
+        return {
+          text: "نامعلوم",
+          color: "#6c757d",
+          bg: "#6c757d15",
+          icon: "❓",
+        };
+    }
+  };
+
+  const paymentStatus = getPaymentStatus(statusCode);
+  const canPay = statusCode === 2 || statusCode === 4;
 
   return (
     <>
@@ -297,6 +349,29 @@ function Factor({ header }) {
             padding: 10px 20px !important;
             font-size: 15px;
             font-weight: bold;
+          }
+
+          /* ===== نشانگر وضعیت پرداخت ===== */
+          .payment-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+          }
+
+          .payment-status-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+          }
+
+          .payment-status-icon {
+            font-size: 20px;
           }
 
           /* ===== پس‌زمینه کلی صفحه - با اسکرول افقی برای موبایل ===== */
@@ -769,19 +844,21 @@ function Factor({ header }) {
           <div className="factor-inner-container">
             {/* دکمه‌های عملیات */}
             <div className="factor-actions-container no-print">
-              {/* دکمه پرداخت اصلی */}
-              <button
-                className="btn-pay-modern"
-                onClick={() => {
-                  window.open(
-                    `http://krabo.gold:3421/api/order/go-to-geteway/?id=${id}`,
-                    '_blank'
-                  );
-                }}
-              >
-                <span className="btn-pay-icon">💳</span>
-                <span>پرداخت آنلاین</span>
-              </button>
+              {/* دکمه پرداخت اصلی - فقط در صورتی که قابل پرداخت باشد */}
+              {canPay && (
+                <button
+                  className="btn-pay-modern"
+                  onClick={() => {
+                    window.open(
+                      `http://krabo.gold:3421/api/order/go-to-geteway/?id=${id}`,
+                      "_blank",
+                    );
+                  }}
+                >
+                  <span className="btn-pay-icon">💳</span>
+                  <span>پرداخت آنلاین</span>
+                </button>
+              )}
 
               {/* دکمه‌های ثانویه */}
               <div className="factor-secondary-actions">
@@ -806,7 +883,9 @@ function Factor({ header }) {
                       <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
                   </span>
-                  <span>{isGenerating ? "در حال ایجاد..." : "دانلود فاکتور"}</span>
+                  <span>
+                    {isGenerating ? "در حال ایجاد..." : "دانلود فاکتور"}
+                  </span>
                 </button>
 
                 <button
@@ -833,7 +912,7 @@ function Factor({ header }) {
               </div>
             </div>
 
-            {/* صفحه فاکتور (بدون تغییر) */}
+            {/* صفحه فاکتور */}
             <div
               className="container factor-page"
               style={{
@@ -893,7 +972,8 @@ function Factor({ header }) {
                   className="info-box"
                   style={{ marginBottom: "25px", textAlign: "right" }}
                 >
-                  خریدار : &nbsp; {factorData?.name || "........................"}
+                  خریدار : &nbsp;{" "}
+                  {factorData?.name || "........................"}
                 </div>
 
                 {/* جدول اصلی */}
@@ -915,7 +995,7 @@ function Factor({ header }) {
                       width: "250px",
                       height: "250px",
                       objectFit: "contain",
-                      opacity: 0.2,
+                      opacity: 0.8,
                       pointerEvents: "none",
                       zIndex: 0,
                     }}
@@ -954,7 +1034,9 @@ function Factor({ header }) {
                             {Number(item.salary || 0).toLocaleString("en-US")}
                           </td>
                           <td style={{ fontWeight: "bold" }}>
-                            {Number(item.help_price || 0).toLocaleString("en-US")}
+                            {Number(item.help_price || 0).toLocaleString(
+                              "en-US",
+                            )}
                           </td>
                         </tr>
                       ))}
@@ -986,6 +1068,23 @@ function Factor({ header }) {
                     : "........................"}
                 </div>
 
+                {/* ✅ نشانگر وضعیت پرداخت */}
+                <div style={{ textAlign: "center", margin: "30px 0" }}>
+                  <div
+                    className="payment-status-badge"
+                    style={{
+                      backgroundColor: paymentStatus.bg,
+                      color: paymentStatus.color,
+                      border: `2px solid ${paymentStatus.color}`,
+                    }}
+                  >
+                    <span className="payment-status-icon">
+                      {paymentStatus.icon}
+                    </span>
+                    <span>وضعیت: {paymentStatus.text}</span>
+                  </div>
+                </div>
+
                 {/* متن تشکر و آدرس */}
                 <div
                   style={{
@@ -996,7 +1095,8 @@ function Factor({ header }) {
                   }}
                 >
                   <p style={{ margin: "5px 0" }}>
-                    ضمن تشکر از انتخاب شما ، فرصت مرجوع کالا ها تا سه روز می باشد.
+                    ضمن تشکر از انتخاب شما ، فرصت مرجوع کالا ها تا سه روز می
+                    باشد.
                   </p>
                   <p style={{ margin: "5px 0", fontWeight: "bold" }}>
                     آدرس : بازار بزرگ تهران ، پاساژ رضا ، طبقه منفی یک، پلاک ۲۲۹
@@ -1015,7 +1115,11 @@ function Factor({ header }) {
                   }}
                 >
                   <div
-                    style={{ display: "flex", alignItems: "center", gap: "8px" }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
                   >
                     <div
                       style={{
@@ -1039,13 +1143,21 @@ function Factor({ header }) {
                   </div>
 
                   <div
-                    style={{ fontSize: "14px", color: "#333", fontWeight: "bold" }}
+                    style={{
+                      fontSize: "14px",
+                      color: "#333",
+                      fontWeight: "bold",
+                    }}
                   >
                     امضاء فروشنده
                   </div>
 
                   <div
-                    style={{ display: "flex", alignItems: "center", gap: "8px" }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
                   >
                     <div
                       style={{

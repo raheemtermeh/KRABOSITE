@@ -1,3 +1,8 @@
+// ✅ این سه خط باید در بالای فایل باشند (قبل از هر ایمپورت دیگری)
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false; // جلوگیری از inject خودکار CSS که باعث تداخل می‌شود
+
 import React, { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import Head from "next/head";
@@ -38,7 +43,6 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     navbarScrollEffect(navbarRef.current);
 
-    // گوش دادن به رویدادهای تغییر مسیر
     const handleStart = () => setIsLoading(true);
     const handleComplete = () => setIsLoading(false);
     const handleError = () => setIsLoading(false);
@@ -68,18 +72,38 @@ function MyApp({ Component, pageProps }) {
 
       <Component {...pageProps} />
 
-      {/* ✅ نمایش لودینگ هنگام تغییر مسیر */}
       {isLoading && <ModernLoader />}
 
       <Script strategy="beforeInteractive" src="/assets/js/lib/pace.js" />
-      <Script strategy="beforeInteractive" src="/assets/js/lib/bootstrap.bundle.min.js" />
-      <Script strategy="beforeInteractive" src="/assets/js/lib/mixitup.min.js" />
+      <Script
+        strategy="beforeInteractive"
+        src="/assets/js/lib/bootstrap.bundle.min.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="/assets/js/lib/mixitup.min.js"
+      />
       <Script strategy="beforeInteractive" src="/assets/js/lib/wow.min.js" />
-      <Script strategy="beforeInteractive" src="/assets/js/lib/html5shiv.min.js" />
+      <Script
+        strategy="beforeInteractive"
+        src="/assets/js/lib/html5shiv.min.js"
+      />
       <Script strategy="lazyOnload" src="/assets/js/main.js" />
 
-      {/* ===== استایل‌های لودینگ ===== */}
+      {/* ===== استایل‌های لودینگ + فیکس آیکون‌ها ===== */}
       <style jsx global>{`
+        /* ✅ فیکس مشکل سایز بزرگ آیکون‌های FontAwesome */
+        svg:not(:root) {
+          overflow: hidden;
+        }
+
+        .svg-inline--fa:not(:root) {
+          width: 1em;
+          height: 1em;
+          vertical-align: -0.125em;
+        }
+
+        /* استایل‌های لودینگ */
         .modern-loader-overlay {
           position: fixed;
           top: 0;
@@ -102,7 +126,7 @@ function MyApp({ Component, pageProps }) {
           border-radius: 28px;
           box-shadow: 0 25px 70px rgba(136, 10, 10, 0.15);
           text-align: center;
-          border: 2px solid #F5E6C8;
+          border: 2px solid #f5e6c8;
           position: relative;
           animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           max-width: 380px;
@@ -110,33 +134,51 @@ function MyApp({ Component, pageProps }) {
         }
 
         .modern-loader-card::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           height: 4px;
-          background: linear-gradient(90deg, #880A0A, #C9A961, #880A0A);
+          background: linear-gradient(90deg, #880a0a, #c9a961, #880a0a);
           background-size: 200% 100%;
           animation: shimmer 2s linear infinite;
           border-radius: 28px 28px 0 0;
         }
 
         @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
+          0% {
+            background-position: -200% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
         }
 
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
 
         @keyframes bounceIn {
-          0% { opacity: 0; transform: scale(0.3); }
-          50% { opacity: 1; transform: scale(1.05); }
-          70% { transform: scale(0.95); }
-          100% { transform: scale(1); }
+          0% {
+            opacity: 0;
+            transform: scale(0.3);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+          70% {
+            transform: scale(0.95);
+          }
+          100% {
+            transform: scale(1);
+          }
         }
 
         .modern-loader-spinner {
@@ -152,17 +194,18 @@ function MyApp({ Component, pageProps }) {
           height: 100%;
           border: 3px solid transparent;
           border-radius: 50%;
-          animation: modernSpin 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+          animation: modernSpin 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+            infinite;
         }
 
         .modern-spinner-ring:nth-child(1) {
-          border-top-color: #880A0A;
-          border-right-color: #880A0A;
+          border-top-color: #880a0a;
+          border-right-color: #880a0a;
         }
 
         .modern-spinner-ring:nth-child(2) {
-          border-top-color: #C9A961;
-          border-left-color: #C9A961;
+          border-top-color: #c9a961;
+          border-left-color: #c9a961;
           animation-delay: -0.4s;
           width: 75%;
           height: 75%;
@@ -171,8 +214,8 @@ function MyApp({ Component, pageProps }) {
         }
 
         .modern-spinner-ring:nth-child(3) {
-          border-bottom-color: #F5E6C8;
-          border-right-color: #F5E6C8;
+          border-bottom-color: #f5e6c8;
+          border-right-color: #f5e6c8;
           animation-delay: -0.8s;
           width: 50%;
           height: 50%;
@@ -187,29 +230,40 @@ function MyApp({ Component, pageProps }) {
           transform: translate(-50%, -50%);
           width: 14px;
           height: 14px;
-          background: linear-gradient(135deg, #880A0A, #C9A961);
+          background: linear-gradient(135deg, #880a0a, #c9a961);
           border-radius: 50%;
           animation: pulseCore 1.5s ease-in-out infinite;
         }
 
         @keyframes modernSpin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
         }
 
         @keyframes pulseCore {
-          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-          50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.6; }
+          0%,
+          100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(1.4);
+            opacity: 0.6;
+          }
         }
 
         .modern-loader-title {
-          font-family: 'Arial', sans-serif;
-          color: #880A0A;
+          font-family: "Arial", sans-serif;
+          color: #880a0a;
           font-size: 32px;
           font-weight: 300;
           letter-spacing: 8px;
           margin: 0 0 8px 0;
-          background: linear-gradient(135deg, #880A0A, #C9A961);
+          background: linear-gradient(135deg, #880a0a, #c9a961);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -231,20 +285,31 @@ function MyApp({ Component, pageProps }) {
         .modern-loader-dots span {
           width: 10px;
           height: 10px;
-          background: linear-gradient(135deg, #C9A961, #880A0A);
+          background: linear-gradient(135deg, #c9a961, #880a0a);
           border-radius: 50%;
           animation: dotBounce 1.4s ease-in-out infinite;
         }
 
-        .modern-loader-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .modern-loader-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes dotBounce {
-          0%, 60%, 100% { transform: scale(0.8); opacity: 0.5; }
-          30% { transform: scale(1.3); opacity: 1; }
+        .modern-loader-dots span:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .modern-loader-dots span:nth-child(3) {
+          animation-delay: 0.4s;
         }
 
-        /* ریسپانسیو برای موبایل */
+        @keyframes dotBounce {
+          0%,
+          60%,
+          100% {
+            transform: scale(0.8);
+            opacity: 0.5;
+          }
+          30% {
+            transform: scale(1.3);
+            opacity: 1;
+          }
+        }
+
         @media (max-width: 480px) {
           .modern-loader-card {
             padding: 40px 30px;

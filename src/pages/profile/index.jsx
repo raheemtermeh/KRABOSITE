@@ -31,7 +31,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import MainLayout from "@layouts/Main";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
-import {defaultHeader} from "@data/headerData"
+import { defaultHeader } from "@data/headerData";
 export default function Profile({ header }) {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState("");
@@ -60,12 +60,15 @@ export default function Profile({ header }) {
 
       const response = await axios.get(
         "https://python.krabo.gold/api/user/profile/",
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
 
       setUserData(response?.data);
     } catch (error) {
-      if (error.response && (error.response.status === 403 || error.response.status === 401)) {
+      if (
+        error.response &&
+        (error.response.status === 403 || error.response.status === 401)
+      ) {
         localStorage.removeItem("userInfoKrabo");
         router.push("/login");
       }
@@ -85,7 +88,7 @@ export default function Profile({ header }) {
       const response = await axios.post(
         "https://python.krabo.gold/api/order/my-factor/",
         {},
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
 
       if (response.status === 200) {
@@ -105,7 +108,7 @@ export default function Profile({ header }) {
 
       const response = await axios.get(
         "https://python.krabo.gold/api/user/my-address/",
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
 
       setAddresses(response?.data || []);
@@ -126,7 +129,7 @@ export default function Profile({ header }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAddress(prev => ({ ...prev, [name]: value }));
+    setAddress((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -148,13 +151,13 @@ export default function Profile({ header }) {
         await axios.put(
           "https://python.krabo.gold/api/user/my-address/",
           { ...address, id: editAddressId },
-          { headers }
+          { headers },
         );
       } else {
         await axios.post(
           "https://python.krabo.gold/api/user/my-address/",
           address,
-          { headers }
+          { headers },
         );
       }
 
@@ -178,7 +181,21 @@ export default function Profile({ header }) {
     setEditAddressId(addr.id);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
+  async function fetchWithRetry(url, retries = 3, delay = 1500) {
+    for (let i = 0; i < retries; i++) {
+      try {
+        const response = await axios.get(url);
+        return response.data;
+      } catch (error) {
+        console.warn(
+          `تلاش ${i + 1} از ${retries} برای دریافت هدر ناموفق بود.`,
+          error.message,
+        );
+        if (i === retries - 1) throw error;
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+    }
+  }
   const handleDelete = async (id) => {
     if (!confirm("آیا از حذف این آدرس مطمئن هستید؟")) return;
 
@@ -202,17 +219,47 @@ export default function Profile({ header }) {
   const getStatusInfo = (statusCode) => {
     switch (statusCode) {
       case 0:
-        return { text: "لغو شده", icon: faTimesCircle, color: "#dc3545", bg: "#dc354510" };
+        return {
+          text: "لغو شده",
+          icon: faTimesCircle,
+          color: "#dc3545",
+          bg: "#dc354510",
+        };
       case 1:
-        return { text: "پرداخت شده", icon: faCheckCircle, color: "#28a745", bg: "#28a74510" };
+        return {
+          text: "پرداخت شده",
+          icon: faCheckCircle,
+          color: "#28a745",
+          bg: "#28a74510",
+        };
       case 2:
-        return { text: "در انتظار پرداخت", icon: faCreditCard, color: "#ffc107", bg: "#ffc10710" };
+        return {
+          text: "در انتظار پرداخت",
+          icon: faCreditCard,
+          color: "#ffc107",
+          bg: "#ffc10710",
+        };
       case 3:
-        return { text: "ارسال شده", icon: faShoppingBag, color: "#17a2b8", bg: "#17a2b810" };
+        return {
+          text: "ارسال شده",
+          icon: faShoppingBag,
+          color: "#17a2b8",
+          bg: "#17a2b810",
+        };
       case 4:
-        return { text: "پیش فاکتور", icon: faFileInvoice, color: "#6c757d", bg: "#6c757d10" };
+        return {
+          text: "پیش فاکتور",
+          icon: faFileInvoice,
+          color: "#6c757d",
+          bg: "#6c757d10",
+        };
       default:
-        return { text: "نامعلوم", icon: faTimesCircle, color: "#6c757d", bg: "#6c757d10" };
+        return {
+          text: "نامعلوم",
+          icon: faTimesCircle,
+          color: "#6c757d",
+          bg: "#6c757d10",
+        };
     }
   };
 
@@ -237,10 +284,16 @@ export default function Profile({ header }) {
         <div className="error-icon">⚠️</div>
         <div className="error-text">{error}</div>
         <div className="error-buttons">
-          <button onClick={() => router.push("/")} className="error-btn home-btn">
+          <button
+            onClick={() => router.push("/")}
+            className="error-btn home-btn"
+          >
             بازگشت به صفحه اصلی
           </button>
-          <button onClick={() => router.push("/login")} className="error-btn login-btn">
+          <button
+            onClick={() => router.push("/login")}
+            className="error-btn login-btn"
+          >
             صفحه ورود
           </button>
         </div>
@@ -268,15 +321,19 @@ export default function Profile({ header }) {
                   className="avatar-image"
                 />
               </div>
-              <h1 className="profile-name">{userData?.username || "کاربر گرامی"}</h1>
-              <p className="profile-email">{userData?.email || userData?.mobile}</p>
+              <h1 className="profile-name">
+                {userData?.username || "کاربر گرامی"}
+              </h1>
+              <p className="profile-email">
+                {userData?.email || userData?.mobile}
+              </p>
             </div>
           </div>
 
           {/* Tabs */}
           <div className="mt-24">
             <div className="tabs-wrapper">
-              {tabs.map(tab => (
+              {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   className={`tab-button ${activeTab === tab.id ? "active" : ""}`}
@@ -300,7 +357,9 @@ export default function Profile({ header }) {
                       <FontAwesomeIcon icon={faUser} />
                       <span>نام کاربری</span>
                     </div>
-                    <div className="info-value">{userData?.username || "—"}</div>
+                    <div className="info-value">
+                      {userData?.username || "—"}
+                    </div>
                   </div>
                   <div className="info-row">
                     <div className="info-label">
@@ -382,8 +441,16 @@ export default function Profile({ header }) {
                       />
                     </div>
                   </div>
-                  <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
-                    {isSubmitting ? "در حال ذخیره..." : editAddressId ? "به‌روزرسانی آدرس" : "ذخیره آدرس"}
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-block"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting
+                      ? "در حال ذخیره..."
+                      : editAddressId
+                        ? "به‌روزرسانی آدرس"
+                        : "ذخیره آدرس"}
                   </button>
                 </form>
 
@@ -391,21 +458,29 @@ export default function Profile({ header }) {
                   <h3 className="list-title">آدرس‌های ذخیره شده</h3>
                   {addresses.length > 0 ? (
                     <div className="address-grid">
-                      {addresses.map(addr => (
+                      {addresses.map((addr) => (
                         <div key={addr.id} className="address-item">
                           <div className="address-header">
                             <span className="address-name">{addr.name}</span>
                             <div className="address-actions">
-                              <button onClick={() => handleEdit(addr)} className="action-icon edit">
+                              <button
+                                onClick={() => handleEdit(addr)}
+                                className="action-icon edit"
+                              >
                                 <FontAwesomeIcon icon={faEdit} />
                               </button>
-                              <button onClick={() => handleDelete(addr.id)} className="action-icon delete">
+                              <button
+                                onClick={() => handleDelete(addr.id)}
+                                className="action-icon delete"
+                              >
                                 <FontAwesomeIcon icon={faTrash} />
                               </button>
                             </div>
                           </div>
                           <p className="address-text">{addr.address}</p>
-                          <p className="address-meta">{addr.city} • {addr.post_code}</p>
+                          <p className="address-meta">
+                            {addr.city} • {addr.post_code}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -425,16 +500,23 @@ export default function Profile({ header }) {
                 <h3 className="list-title">لیست فاکتورها</h3>
                 {myFactors.length > 0 ? (
                   <div className="factors-list">
-                    {myFactors.map(item => {
+                    {myFactors.map((item) => {
                       const status = getStatusInfo(item.status_code);
                       // ✅ دکمه پرداخت فقط برای پیش فاکتور (4) و در انتظار پرداخت (2)
-                      const canPay = item.status_code === 2 || item.status_code === 4;
+                      const canPay =
+                        item.status_code === 2 || item.status_code === 4;
 
                       return (
                         <div key={item.id} className="factor-item">
                           <div className="factor-info">
                             <span className="factor-number">#{item.id}</span>
-                            <div className="factor-status" style={{ background: status.bg, color: status.color }}>
+                            <div
+                              className="factor-status"
+                              style={{
+                                background: status.bg,
+                                color: status.color,
+                              }}
+                            >
                               <FontAwesomeIcon icon={status.icon} />
                               <span>{status.text}</span>
                             </div>
@@ -448,7 +530,7 @@ export default function Profile({ header }) {
                                 onClick={() => {
                                   window.open(
                                     `http://krabo.gold:3421/api/order/go-to-geteway/?id=${item.id}`,
-                                    "_blank"
+                                    "_blank",
                                   );
                                 }}
                               >
@@ -483,8 +565,7 @@ export default function Profile({ header }) {
           </div>
         </div>
       </MainLayout>
-      <FooterMobile location="home" header={header?.data?.data} />
-
+      <FooterMobile location="home" header={header?.data} />{" "}
       <style jsx>{`
         .profile-page {
           min-height: 100vh;
@@ -644,50 +725,49 @@ export default function Profile({ header }) {
           gap: 12px;
         }
 
-/* Factor Actions Container */
-.factor-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+        /* Factor Actions Container */
+        .factor-actions {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
 
-/* Pay Button */
-.factor-action.pay-btn {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  color: white;
-}
+        /* Pay Button */
+        .factor-action.pay-btn {
+          background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+          color: white;
+        }
 
-.factor-action.pay-btn:hover {
-  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
-}
+        .factor-action.pay-btn:hover {
+          background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
 
-/* Print Button */
-.factor-action.print-btn {
-  background: #880a0a;
-  color: white;
-}
+        /* Print Button */
+        .factor-action.print-btn {
+          background: #880a0a;
+          color: white;
+        }
 
-.factor-action.print-btn:hover {
-  background: #6b0506;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(136, 10, 10, 0.3);
-}
+        .factor-action.print-btn:hover {
+          background: #6b0506;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(136, 10, 10, 0.3);
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .factor-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  .factor-action {
-    width: 100%;
-    justify-content: center;
-  }
-}
+        /* Responsive */
+        @media (max-width: 768px) {
+          .factor-actions {
+            width: 100%;
+            flex-direction: column;
+          }
 
+          .factor-action {
+            width: 100%;
+            justify-content: center;
+          }
+        }
 
         .btn {
           flex: 1;
@@ -962,7 +1042,9 @@ export default function Profile({ header }) {
         }
 
         @keyframes spin {
-          to { transform: rotate(360deg); }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
         .loading-text {
@@ -1034,12 +1116,12 @@ export default function Profile({ header }) {
             flex-direction: column;
             align-items: flex-start;
           }
-          
+
           .factor-item {
             flex-direction: column;
             text-align: center;
           }
-          
+
           .factor-action {
             width: 100%;
             justify-content: center;
@@ -1065,15 +1147,35 @@ export default function Profile({ header }) {
 }
 
 export async function getServerSideProps(context) {
-  // دیگر نیازی به fs.readFileSync نیست!
-  // داده مستقیماً از فایل JS لود می‌شود - بدون ارور، بدون کرش
-  return {
-    props: {
-      header: {
-        status: 200,
-        success: true,
-        data: defaultHeader,
+  try {
+    // ✅ استفاده از axios به جای fetch (چون در Node.js Next.js 12 fetch در دسترس نیست)
+    const response = await axios.get("https://python.krabo.gold/ui/home/home");
+    const result = response.data;
+
+    // استخراج هدر از پاسخ API - در صورت نبود، از defaultHeader استفاده می‌شود
+    const headerData = result?.data?.header || defaultHeader;
+
+    return {
+      props: {
+        header: {
+          status: 200,
+          success: true,
+          data: headerData,
+        },
       },
-    },
-  };
+    };
+  } catch (error) {
+    console.error("خطا در دریافت هدر:", error.message);
+
+    // در صورت خطا، از defaultHeader به عنوان fallback استفاده می‌کنیم
+    return {
+      props: {
+        header: {
+          status: 500,
+          success: false,
+          data: defaultHeader,
+        },
+      },
+    };
+  }
 }
