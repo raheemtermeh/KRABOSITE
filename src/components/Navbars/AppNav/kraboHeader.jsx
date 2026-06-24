@@ -1501,12 +1501,27 @@ const Navbar = ({ navbarRef, header, location, status, searchShow }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
 
-  const safeHeader = React.useMemo(() => {
-    if (!header) return { menu: [] };
-    if (header.menu) return header;
-    if (header.data?.menu) return header.data;
-    return { menu: [] };
-  }, [header]);
+const safeHeader = React.useMemo(() => {
+  let headerData;
+  if (!header) headerData = { menu: [] };
+  else if (header.menu) headerData = header;
+  else if (header.data?.menu) headerData = header.data;
+  else headerData = { menu: [] };
+
+  // اگر اولین آیتم "زنانه" بود، آن را به عنوان آیتم سوم قرار بده
+  if (
+    headerData.menu &&
+    headerData.menu.length >= 3 &&
+    headerData.menu[0]?.title === "زنانه"
+  ) {
+    const reordered = [...headerData.menu];
+    const firstItem = reordered.splice(0, 1)[0];
+    reordered.splice(2, 0, firstItem);
+    return { ...headerData, menu: reordered };
+  }
+
+  return headerData;
+}, [header]);
 
   async function fetchData() {
     try {
