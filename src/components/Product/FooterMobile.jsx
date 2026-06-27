@@ -54,7 +54,7 @@ function FooterMobile({ price, product, idPrice }) {
       const errorMessage = error.response
         ? error.response.data.message
         : "لطفا بعدا تلاش کنید";
-      console.log("Error:", errorMessage);
+      ("Error:", errorMessage);
       setError("خطا! " + errorMessage);
     } finally {
       setLoading(false);

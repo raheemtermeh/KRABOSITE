@@ -44,15 +44,6 @@ const TabContent = ({ isActive, id, product }) => {
         ? JSON.parse(localStorage.getItem("userInfoKrabo")).token
         : null;
 
-    // Handle cart animation
-    const cartElement = document.querySelector(".chart-desktop");
-    if (cartElement) {
-      cartElement.classList.add("shake");
-      setTimeout(() => {
-        cartElement.classList.remove("shake");
-      }, 500);
-    }
-
     // Redirect to login if token is not available
     if (!token) {
       router.push("/login");
@@ -77,10 +68,6 @@ const TabContent = ({ isActive, id, product }) => {
         },
       );
       router.push("/ShoppingCart/");
-      const totalItemsElement = document.querySelector("#cart-2");
-      if (totalItemsElement) {
-        totalItemsElement.setAttribute("data-totalitems", response.data.count);
-      }
     } catch (error) {
       setError(
         "خطا! " +

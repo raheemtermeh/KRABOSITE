@@ -8,7 +8,7 @@
 
 // export const GlobalStateProvider = ({ children }) => {  
 //   const [state, setState] = useState(initialState);  
-//    console.log({state});
+//    ({state});
    
 //   return (  
 //     <GlobalStateContext.Provider value={{ state, setState }}>  

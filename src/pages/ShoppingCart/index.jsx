@@ -4,7 +4,6 @@ import MainLayout from "@layouts/Main";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
 import Navbar from "@components/Navbars/AppNav/kraboHeader";
 import { useRouter } from "next/router";
-import useFetchCartItems from "@components/Product/useFetchCartItems";
 import Factor from "pages/factor/[idFactor]";
 import NumberFormat from "react-number-format";
 import { round } from "lodash";
@@ -62,19 +61,10 @@ const ShoppingCart = ({ header }) => {
     }
   }
 
-  const totalItems = useFetchCartItems();
-
   useEffect(() => {
     fetchData();
     setIsLogin(localStorage.getItem("userInfoKrabo"));
-    if (document.querySelector("#cart-2")) {
-      if (totalItems) {
-        document
-          .querySelector("#cart-2")
-          .setAttribute("data-totalitems", totalItems);
-      }
-    }
-  }, [totalItems]);
+  }, []);
 
   if (loading) {
     return (
@@ -162,7 +152,7 @@ const ShoppingCart = ({ header }) => {
           setError(true);
         }
       } catch (error) {
-        console.log("Error removing item:", error);
+        ("Error removing item:", error);
         setError(true);
       } finally {
         setLoading(false);

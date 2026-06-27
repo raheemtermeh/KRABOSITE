@@ -51,7 +51,7 @@ function Factor({ header }) {
         { headers },
       );
 
-      console.log(
+      (
         "FACTOR FULL RESPONSE:",
         JSON.stringify(response.data, null, 2),
       );
@@ -88,7 +88,7 @@ function Factor({ header }) {
 
       const rect = element.getBoundingClientRect();
 
-      console.log("Element dimensions:", rect.width, rect.height);
+      ("Element dimensions:", rect.width, rect.height);
 
       const canvas = await html2canvas(element, {
         useCORS: true,
@@ -136,7 +136,7 @@ function Factor({ header }) {
         },
       });
 
-      console.log("Canvas created:", canvas.width, canvas.height);
+      ("Canvas created:", canvas.width, canvas.height);
 
       const blob = await new Promise((resolve) => {
         canvas.toBlob(resolve, "image/png", 1.0);

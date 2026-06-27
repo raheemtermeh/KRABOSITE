@@ -8,7 +8,6 @@ import MainLayout from "@layouts/Main";
 //= Components
 import Navbar from "@components/Navbars/AppNav/kraboHeader";
 import Footer from "@components/Footer/Footer";
-import useFetchCartItems from "@components/Product/useFetchCartItems";
 import { useRouter } from "next/router";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
 import Product3 from "@components/Product/Category/Product3";
@@ -30,31 +29,15 @@ const STATIC_MENU = {
 const Index = ({ category, header }) => {
   const router = useRouter();
   const navbarRef = useRef(null);
-  const totalItems = useFetchCartItems();
 
   useEffect(() => {
     navbarScrollEffect(navbarRef.current, true);
-
-    if (document.querySelector("#cart-2")) {
-      if (totalItems) {
-        document
-          .querySelector("#cart-2")
-          .setAttribute("data-totalitems", totalItems);
-      }
-    }
 
     if (!category.success || header.status === 404 || !category.data) {
       router.push("/404");
       return null;
     }
-  }, [
-    navbarRef,
-    totalItems,
-    router,
-    header.status,
-    category.success,
-    category.data,
-  ]);
+  }, [navbarRef, router, header.status, category.success, category.data]);
 
   // هدر استاتیک: اگر دیتا داشت از دیتا استفاده کن، وگرنه از منوی استاتیک
   const headerData =

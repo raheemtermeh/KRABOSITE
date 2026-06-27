@@ -19,9 +19,9 @@ const C = ({
 
     //   <div className="card-title">
     //     <span onClick={()=>{
-    //       console.log(category)
-    //       console.log("category")
-    //       console.log(router.query.idSubCategory)
+    //       (category)
+    //       ("category")
+    //       (router.query.idSubCategory)
           
     //       }}>دسته بندی محصولات</span>
     //   </div>

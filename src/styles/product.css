@@ -102,3 +102,7 @@
   line-height: 1.6;
   display: block;
 }
+
+body.hide-product-scroll-top .to_top {
+  display: none !important;
+}

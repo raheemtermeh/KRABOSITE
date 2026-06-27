@@ -7,8 +7,6 @@ import Product from "./Product2";
 import TopFilter from "./TopFilter";
 import Link from "next/link";
 import useIsMobile from "hook/isMobile";
-import GlobalNavbar from "@components/Navbars/AppNav/GlobalNavbar";
-import navbarScrollEffect from "@common/navbarScrollEffect";
 
 const Shop = ({
   style = "4",
@@ -38,12 +36,6 @@ const Shop = ({
   const [pageNumber, setPageNumber] = useState(1);
   const scrollTimeout = useRef(null);
   const isFirstRender = useRef(true);
-  const navbarRef = useRef(null);
-
-  // اسکرول افکت برای هدر
-  useEffect(() => {
-    navbarScrollEffect(navbarRef.current, true);
-  }, []);
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -108,37 +100,8 @@ const Shop = ({
     );
   };
 
-  // آماده‌سازی دیتای هدر
-  const headerData = header?.data || null;
-
-  // منوی پیش‌فرض معتبر با ساختار درست
-  const defaultHeader = {
-    menu: [
-      { title: "صفحه نخست", url: "/", menu_item: [] },
-      { title: "گردنبند", url: "/product/necklaces", menu_item: [] },
-      { title: "گوشواره", url: "/product/earrings", menu_item: [] },
-      { title: "دستبند", url: "/product/bracelets", menu_item: [] },
-      { title: "انگشتر", url: "/product/womens-gold-ring", menu_item: [] },
-      { title: "آویز", url: "/product/watch-pendant", menu_item: [] },
-    ],
-  };
-
-  // اگر headerData وجود دارد و menu دارد از آن استفاده کن، وگرنه از defaultHeader استفاده کن
-  const finalHeader =
-    headerData && headerData.menu && headerData.menu.length > 0
-      ? headerData
-      : defaultHeader;
-
   return (
     <>
-      {/* هدر */}
-      {/* <GlobalNavbar
-        navbarRef={navbarRef}
-        headerData={finalHeader}
-        location="shop-page"
-        searchShow={true}
-      /> */}
-
       <section className="shop section-padding pt-50">
         <div className="container">
           <style jsx>{`

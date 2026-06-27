@@ -9,10 +9,8 @@ import MainLayout from "@layouts/Main";
 import Navbar from "@components/Navbars/AppNav/kraboHeader";
 import ProductBox from "@components/Product/Detail/TabsContent";
 import Footer from "@components/Footer/Footer";
-import useFetchCartItems from "@components/Product/useFetchCartItems";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
 import { useRouter } from "next/router";
-import { createGlobalStyle } from "styled-components";
 
 // منوی استاتیک پیش‌فرض
 const STATIC_MENU = {
@@ -31,35 +29,24 @@ const STATIC_MENU = {
 const PageFAQ = ({ product, header }) => {
   const navbarRef = useRef(null);
   const router = useRouter();
-  const totalItems = useFetchCartItems();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     navbarScrollEffect(navbarRef.current, true);
+    document.body.classList.add("hide-product-scroll-top");
     if (!product.success || header.status === 404) {
       router.push("/404");
-      return null;
     }
-    if (document.querySelector("#cart-2")) {
-      if (totalItems) {
-        document
-          .querySelector("#cart-2")
-          .setAttribute("data-totalitems", totalItems);
-      }
-    }
-  }, [navbarRef, totalItems, product.success, header.status, router]);
+    return () => {
+      document.body.classList.remove("hide-product-scroll-top");
+    };
+  }, [navbarRef, product.success, header.status, router]);
 
   // هدر استاتیک: اگر دیتا داشت از دیتا استفاده کن، وگرنه از منوی استاتیک
   const headerData =
     header?.data?.menu && header.data.menu.length > 0
       ? header.data
       : STATIC_MENU;
-
-  const GlobalStyles = createGlobalStyle`
-    .to_top {
-      display: none!important;
-    }
-  `;
 
   if (!product.success) {
     return (
@@ -91,7 +78,6 @@ const PageFAQ = ({ product, header }) => {
 
   return (
     <>
-      <GlobalStyles />
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

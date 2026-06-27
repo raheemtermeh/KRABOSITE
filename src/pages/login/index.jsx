@@ -48,7 +48,7 @@ export default function Login() {
         setError("مشکلی پیش آمده است!!!");
       }
     } catch (error) {
-      console.log({ error });
+      ({ error });
 
       setError(
         "خطا! \n " +
@@ -147,7 +147,7 @@ export default function Login() {
         setError("مشکلی پیش آمده است!!!");
       }
     } catch (error) {
-      console.log({ error });
+      ({ error });
 
       setError(
         "خطا! \n  " +
@@ -173,12 +173,12 @@ export default function Login() {
       );
 
       if (response.status === 200) {
-        console.log("retry");
+        ("retry");
       } else {
         setError("مشکلی پیش آمده است!!!");
       }
     } catch (error) {
-      console.log({ error });
+      ({ error });
 
       setError(
         "خطا! \n " +

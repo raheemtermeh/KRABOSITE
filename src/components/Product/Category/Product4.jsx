@@ -3,7 +3,7 @@ import { round } from "lodash";
 import Link from "next/link";
 
 const Product = ({ product, rtl }) => {
-  console.log({ product });
+  ({ product });
 
   return (
     <div className="col-6 col-lg-3 col-sm-6 card-width">

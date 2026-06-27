@@ -97,7 +97,7 @@ const ProductList = ({ header }) => {
         return order.indexOf(a.name) - order.indexOf(b.name);
       });
 
-      console.log("Final categories:", sortedCategories);
+      ("Final categories:", sortedCategories);
       setCategories(sortedCategories);
     }
   }, [header]);
@@ -143,7 +143,7 @@ const ProductList = ({ header }) => {
         ];
 
   const handleCategoryClick = (href, name) => {
-    console.log(`Navigating to: ${href} for category: ${name}`);
+    (`Navigating to: ${href} for category: ${name}`);
     router.push(href);
   };
 

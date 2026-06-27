@@ -63,7 +63,7 @@ function SearchWithDropdown() {
       setPageNumber(data?.page);
       setShowDropdown(true);
     } catch (error) {
-      console.log(error);
+      (error);
     } finally {
       setLoading(false);
     }

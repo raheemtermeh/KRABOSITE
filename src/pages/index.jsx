@@ -14,7 +14,6 @@ import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
 import CollectionList from "@components/collection/CollectionList";
 import ProductList from "@components/listProduct/productList";
 import FeatureList from "@components/Home/FeacureList";
-import useFetchCartItems from "@components/Product/useFetchCartItems";
 import ImageList from "@components/imageList/ImageList";
 import GoldRangBox from "@components/GoldRangBox/GoldRangBox";
 import ServiceBox from "@components/ServiceBox";
@@ -43,16 +42,10 @@ async function fetchWithRetry(url, retries = 3, delay = 1500) {
 
 const HomeAppLanding = ({ home }) => {
   const navbarRef = useRef(null);
-  const totalItems = useFetchCartItems();
 
   useEffect(() => {
-    if (document.querySelector("#cart-2")) {
-      if (totalItems) {
-        document.querySelector("#cart-2").setAttribute("data-totalitems", totalItems);
-      }
-    }
     navbarScrollEffect(navbarRef.current);
-  }, [navbarRef, totalItems]);
+  }, [navbarRef]);
 
   return (
     <>

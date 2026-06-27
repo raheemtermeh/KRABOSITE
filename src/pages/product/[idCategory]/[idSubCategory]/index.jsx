@@ -11,14 +11,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import navbarScrollEffect from "@common/navbarScrollEffect";
 import Navbar from "@components/Navbars/AppNav/kraboHeader";
-import useFetchCartItems from "@components/Product/useFetchCartItems";
 import LoadingBar from "@components/loadingBar";
 import FooterMobile from "@components/Navbars/AppNav/FooterMobile";
 
 const Index = ({ category, header }) => {
   const navbarRef = useRef(null);
   const router = useRouter();
-  const totalItems = useFetchCartItems();
   const [page, setPage] = useState(1);
   const [product, setProduct] = useState([]);
   const [event_list, setevent_list] = useState([]);
@@ -50,7 +48,7 @@ const Index = ({ category, header }) => {
         });
         setProduct((prev) => [...prev, ...(data?.product || [])]);
       } catch (error) {
-        console.log(error);
+        (error);
       } finally {
         setLoading(false);
       }
@@ -67,12 +65,7 @@ const Index = ({ category, header }) => {
       router.push("/404");
       return;
     }
-    if (document.querySelector("#cart-2") && totalItems) {
-      document
-        .querySelector("#cart-2")
-        .setAttribute("data-totalitems", totalItems);
-    }
-  }, [navbarRef, totalItems, header.status, category.success, router]);
+  }, [navbarRef, header.status, category.success, router]);
 
   // اگر هدر داده معتبر ندارد، از یک منوی پیش‌فرض استفاده کن
   const headerData = header?.data?.menu
@@ -184,7 +177,7 @@ export async function getServerSideProps(context) {
       success: true,
       data: headerData,
     };
-    console.log("Header data structure:", JSON.stringify(headerData, null, 2));
+    ("Header data structure:", JSON.stringify(headerData, null, 2));
   } catch (error) {
     console.error("Header fetch error:", error.message);
     header = {
@@ -223,7 +216,7 @@ export async function getServerSideProps(context) {
     if (size__lte) apiUrl += `&properties__size__lte=${size__lte}`;
     if (event_list) apiUrl += `&event_list__in=${event_list}`;
 
-    console.log("API URL:", apiUrl);
+    ("API URL:", apiUrl);
 
     const { data } = await axios.get(apiUrl, { timeout: 15000 });
 

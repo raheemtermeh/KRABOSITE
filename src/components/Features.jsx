@@ -4,8 +4,8 @@ import featuresRTL from "@data/App/features-rtl.json";
 const Features = ({ rtl, banner }) => {
   const featuresData = rtl ? featuresRTL : features;
 
-  console.log("banner");
-  console.log(banner);
+  ("banner");
+  (banner);
   return (
     <section className="features pt-70 pb-70 style-4" data-scroll-index="1">
       <div className="container">
