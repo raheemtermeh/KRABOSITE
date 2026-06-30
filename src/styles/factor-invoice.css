@@ -1,0 +1,530 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+
+/* Invoice layout — Krabo factor template (display + print) */
+
+.factor-print-area {
+  width: 148mm;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10mm 8mm;
+  direction: rtl;
+  background: white;
+  color: #000;
+  font-family: "Vazirmatn", "Vazir", Tahoma, sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.factor-print-area,
+.factor-print-area * {
+  font-family: "Vazirmatn", "Vazir", Tahoma, sans-serif;
+}
+
+.factor-header-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.factor-header-row--left {
+  justify-content: flex-end;
+}
+
+.factor-header-row:last-of-type {
+  margin-bottom: 16px;
+}
+
+.factor-info-box {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.factor-info-box--compact {
+  min-width: 180px;
+}
+
+.factor-info-box--full {
+  width: 100%;
+}
+
+.factor-table-section {
+  --factor-col-no: 44px;
+  --factor-col-karat: 48px;
+  --factor-col-weight: 58px;
+  --factor-col-fee: 72px;
+  --factor-col-amount: 96px;
+  --factor-grid-cols:
+    var(--factor-col-no)
+    minmax(80px, 1fr)
+    var(--factor-col-karat)
+    var(--factor-col-weight)
+    var(--factor-col-fee)
+    var(--factor-col-amount);
+  margin-bottom: 4px;
+}
+
+.factor-table-head,
+.factor-table-row,
+.factor-table-body-lines {
+  display: grid;
+  grid-template-columns: var(--factor-grid-cols);
+  width: 100%;
+}
+
+.factor-table-head {
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 5px 5px 5px 5px;
+  overflow: hidden;
+  margin-bottom: 3px;
+  background: #fff;
+}
+
+.factor-table-head::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: var(--factor-col-no);
+  width: 1px;
+  background: #000;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.factor-table-head .factor-col {
+  padding: 8px 6px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  border-left: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.factor-table-head .factor-col:first-child {
+  border-left: none;
+}
+
+.factor-table-head .factor-col-desc {
+  border-left: none;
+}
+
+.factor-table-head .factor-col-karat {
+  border-left: 1px solid #000;
+}
+
+.factor-table-body {
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 10px 10px 8px 8px;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.factor-table-body-lines {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.factor-table-body-lines span {
+  min-height: 100%;
+}
+
+.factor-table-body-lines span:first-child {
+  border-left: 1px solid #000;
+}
+
+.factor-table-body-lines span:nth-child(2),
+.factor-table-body-lines span:nth-child(3),
+.factor-table-body-lines span:nth-child(4),
+.factor-table-body-lines span:nth-child(5),
+.factor-table-body-lines span:nth-child(6) {
+  border-left: 1px solid #000;
+}
+
+.factor-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(280px, 52%);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  z-index: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.factor-table-row {
+  position: relative;
+  z-index: 1;
+  min-height: 36px;
+}
+
+.factor-table-body .factor-col {
+  padding: 8px 6px;
+  font-size: 11px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+}
+
+.factor-table-body .factor-col-desc {
+  justify-content: flex-start;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.factor-table-row--filled .factor-col-desc {
+  position: relative;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+.factor-table-row--filled .factor-col-desc::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  width: 45%;
+  max-width: 160px;
+  border-bottom: 1px solid #000;
+  pointer-events: none;
+}
+
+.factor-col-bold {
+  font-weight: bold;
+}
+
+.factor-gold-rate {
+  margin-bottom: 20px;
+}
+
+.factor-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.factor-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 0;
+}
+
+.factor-footer-item:first-child {
+  justify-content: flex-start;
+}
+
+.factor-footer-signature {
+  justify-content: center;
+  font-size: 10px;
+  color: #333;
+}
+
+.factor-footer-item:last-child {
+  justify-content: flex-end;
+}
+
+.factor-footer-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e8c547 0%, #c9a227 45%, #a8841a 100%);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.factor-footer-icon svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}
+
+.factor-footer-text {
+  white-space: nowrap;
+}
+
+.factor-terms {
+  text-align: center;
+  font-size: 10px;
+  line-height: 2;
+  margin: 18px 0;
+}
+
+.factor-terms p {
+  margin: 4px 0;
+}
+
+.factor-terms p:last-child {
+  font-weight: bold;
+}
+
+.factor-invoice-page:not(:last-of-type) {
+  page-break-after: always;
+  break-after: page;
+}
+
+.factor-invoice-page:last-of-type {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.factor-batch-container {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 210mm;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .factor-print-area {
+    width: 100%;
+    padding: 16px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .factor-info-box {
+    font-size: 10px;
+    padding: 7px 12px;
+  }
+
+  .factor-info-box--compact {
+    min-width: 150px;
+  }
+
+  .factor-table-section {
+    --factor-col-no: 36px;
+    --factor-col-karat: 40px;
+    --factor-col-weight: 48px;
+    --factor-col-fee: 58px;
+    --factor-col-amount: 76px;
+  }
+
+  .factor-table-head .factor-col,
+  .factor-table-body .factor-col {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+
+  .factor-table-body {
+    min-height: 300px;
+  }
+
+  .factor-bg-logo {
+    width: min(200px, 58%);
+    opacity: 0.5;
+  }
+
+  .factor-footer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .factor-footer-item,
+  .factor-footer-item:first-child,
+  .factor-footer-item:last-child {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .factor-print-area {
+    padding: 12px;
+  }
+
+  .factor-table-section {
+    --factor-col-no: 30px;
+    --factor-col-karat: 34px;
+    --factor-col-weight: 40px;
+    --factor-col-fee: 48px;
+    --factor-col-amount: 62px;
+  }
+
+  .factor-table-head .factor-col,
+  .factor-table-body .factor-col {
+    padding: 5px 3px;
+    font-size: 9px;
+  }
+
+  .factor-table-body {
+    min-height: 260px;
+  }
+
+  .factor-bg-logo {
+    width: min(160px, 62%);
+    opacity: 0.48;
+  }
+
+  .factor-footer-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+
+  .factor-footer-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .factor-footer-item {
+    font-size: 10px;
+    gap: 6px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  .no-print,
+  .sticky-header,
+  .main-header,
+  .top-navbar,
+  .footer-mobile,
+  .to_top,
+  .msb {
+    display: none !important;
+  }
+
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .factor-modern-wrapper {
+    min-height: auto !important;
+    padding: 0 !important;
+    background: #fff !important;
+    animation: none !important;
+    overflow: visible !important;
+  }
+
+  .factor-modern-wrapper::before,
+  .factor-modern-wrapper::after {
+    display: none !important;
+  }
+
+  .factor-inner-container {
+    margin: 0 !important;
+  }
+
+  .payment-status-badge {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+  }
+
+  .factor-print-area {
+    width: 148mm !important;
+    max-width: 148mm !important;
+    padding: 10mm 8mm !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .factor-bg-logo {
+    opacity: 0.55 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .factor-info-box,
+  .factor-table-head,
+  .factor-table-body {
+    border: 1px solid #000 !important;
+  }
+
+  .factor-table-head .factor-col,
+  .factor-table-body .factor-col,
+  .factor-table-head::after,
+  .factor-table-body-lines span,
+  .factor-table-head .factor-col-karat {
+    border-color: #000 !important;
+  }
+
+  .factor-footer {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+
+  .factor-footer-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    font-size: 11px !important;
+    gap: 8px !important;
+  }
+
+  .factor-footer-item:first-child {
+    justify-content: flex-start !important;
+  }
+
+  .factor-footer-signature {
+    justify-content: center !important;
+    font-size: 10px !important;
+  }
+
+  .factor-footer-item:last-child {
+    justify-content: flex-end !important;
+  }
+
+  .factor-footer-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .factor-footer-icon svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .factor-header-row--left {
+    justify-content: flex-end !important;
+  }
+
+  body {
+    display: block !important;
+  }
+}

@@ -10,6 +10,7 @@ import "../styles/loader.css";
 import "../styles/globals.css";
 import "../styles/product.css";
 import "../styles/header.css";
+import "../styles/factor-invoice.css";
 import TopNav from "@components/Header/TopNav";
 import navbarScrollEffect from "@common/navbarScrollEffect";
 import { useRouter } from "next/router";
