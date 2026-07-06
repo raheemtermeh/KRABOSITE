@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import enamadimg from "../../../public/Linkssets/img/enamad.png";
 import samandehi from "../../../public/Linkssets/img/samandehi-badge.png";
 import paymentimg from "../../../public/Linkssets/img/payment-badge.png";
-import Link from "next/link";
 const Footer = ({ noWave, rtl }) => {
   const handleMouseMove = (event) => {
     const dropDownToggler = event.target.classList.contains("dropdown-toggle")
