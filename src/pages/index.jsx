@@ -88,7 +88,7 @@ const HomeAppLanding = ({ home }) => {
               <ImageList />
               <ServiceBox />
               <ProductList header={home.data.data.header} />
-              
+       
               <Projects
                 banner={home.data.data.box.filter((item) => {
                   return item.idd === "2019";

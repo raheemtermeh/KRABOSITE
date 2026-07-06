@@ -138,6 +138,20 @@ const TabContent = ({ isActive, id, product }) => {
     }
   }, []);
 
+  const attributes = product?.data?.attributes || [];
+  const visibleAttributes = attributes.slice(0, 3);
+
+  const goToDescription = () => {
+    document.getElementById("nav-home-tab")?.click();
+
+    setTimeout(() => {
+      document.getElementById("nav-home")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
+
   return (
     <>
       <LoadingOverlay isLoading={loading} />
@@ -175,7 +189,7 @@ const TabContent = ({ isActive, id, product }) => {
                         src={
                           Image
                             ? Image.image
-                            : `https://python.krabo.gold/${product.data.image}`
+                            : `${product.data.image}`
                         }
                         style={{
                           width: "89%",
@@ -297,7 +311,7 @@ const TabContent = ({ isActive, id, product }) => {
                                   src={
                                     Image
                                       ? Image.image
-                                      : `https://python.krabo.gold/${product.data.image}`
+                                      : `${product.data.image}`
                                   }
                                   className="main-product-image"
                                 />
@@ -315,13 +329,13 @@ const TabContent = ({ isActive, id, product }) => {
                                           SetImage({
                                             index: gallery.name,
                                             alt: gallery.name,
-                                            image: `https://python.krabo.gold/media/${gallery.image}`,
+                                            image: `${gallery.image_max_url}`,
                                           });
                                         }}
                                       >
                                         <img
                                           alt={gallery.name}
-                                          src={`https://python.krabo.gold/media/${gallery.image}`}
+                                          src={`${gallery.image_max_url}`}
                                           className="thumbnail-image"
                                         />
                                       </div>
@@ -931,36 +945,62 @@ const TabContent = ({ isActive, id, product }) => {
                                     )}
                                 </div>
 
-                                {product.data.attributes.length > 0 && (
+                                {attributes.length > 0 && (
                                   <>
                                     <hr />
                                     <br />
                                     <br />
-                                    <p>ویژگی</p>
+                                    <p>ویژگی‌ها</p>
 
                                     <div
                                       className="row gx-6"
                                       style={{
                                         padding: "7px",
-                                       
                                       }}
                                     >
                                       <ul className="flex-fix">
-                                        {product.data.attributes.length > 0 &&
-                                          product.data.attributes.map(
-                                            (data, index) => (
-                                              <li
-                                                key={index}
-                                                className="attributes"
-                                              >
-                                                <span className="comment">
-                                                  {data.comment}
-                                                </span>
-                                                <br />
-                                              </li>
-                                            ),
-                                          )}
+                                        {visibleAttributes.map((data, index) => (
+                                          <li
+                                            key={index}
+                                            className="attributes"
+                                          >
+                                            <span
+                                              className="attribute-name"
+                                              style={{
+                                                fontWeight: "bold",
+                                                color: "#222",
+                                                marginLeft: "6px",
+                                              }}
+                                            >
+                                              {data.name}:
+                                            </span>
+
+                                            <span className="comment">
+                                              {data.comment}
+                                            </span>
+
+                                            <br />
+                                          </li>
+                                        ))}
                                       </ul>
+
+                                      {attributes.length > 3 && (
+                                        <button
+                                          type="button"
+                                          onClick={goToDescription}
+                                          style={{
+                                            border: "none",
+                                            background: "transparent",
+                                            color: "#880a0a",
+                                            cursor: "pointer",
+                                            fontWeight: "bold",
+                                            marginTop: "10px",
+                                            padding: "0",
+                                          }}
+                                        >
+                                          مشاهده بیشتر
+                                        </button>
+                                      )}
                                     </div>
                                   </>
                                 )}
@@ -1013,18 +1053,81 @@ const TabContent = ({ isActive, id, product }) => {
                             </button>
                           </div>
                         </nav>
-
                         <div className="tab-content" id="nav-tabContent">
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: product.data.description,
-                            }}
+                               <div
                             className="tab-pane fade show active"
                             id="nav-home"
                             role="tabpanel"
                             aria-labelledby="nav-home-tab"
                             style={{ fontSize: "16px", fontWeight: "light" }}
-                          ></div>
+                          >
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: product.data.description,
+                              }}
+                            />
+
+                            {attributes.length > 0 && (
+                              <div
+                                style={{
+                                  marginTop: "24px",
+                                  paddingTop: "16px",
+                                  borderTop: "1px solid #eee",
+                                }}
+                              >
+                                <h3
+                                  style={{
+                                    fontSize: "18px",
+                                    fontWeight: "bold",
+                                    marginBottom: "14px",
+                                    color: "#222",
+                                  }}
+                                >
+                                  ویژگی‌های محصول
+                                </h3>
+                                
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "10px",
+                                  }}
+                                >
+                                  {attributes.map((item, index) => (
+                                    <div
+                                      key={index}
+                                      style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "center",
+                                        padding: "10px 0",
+                                        borderBottom: "1px solid #f1f1f1",
+                                        fontSize: "14px",
+                                      }}
+                                    >
+                                      <span
+                                        style={{
+                                          color: "#666",
+                                          fontWeight: "500",
+                                        }}
+                                      >
+                                        {item.name}
+                                      </span>
+                                      
+                                      <span
+                                        style={{
+                                          color: "#222",
+                                          fontWeight: "bold",
+                                        }}
+                                      >
+                                        {item.comment}
+                                      </span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
 
                           <div
                             className="tab-pane fade"
@@ -1052,9 +1155,9 @@ const TabContent = ({ isActive, id, product }) => {
       />
 
       {/* دکمه سبد خرید شناور برای موبایل */}
-      
+
       {isMobile && (
-        <div 
+        <div
           style={{
             position: 'fixed',
             bottom: '0',
@@ -1069,8 +1172,8 @@ const TabContent = ({ isActive, id, product }) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             borderTop: '2px solid #f0f0f0',
-            marginBottom:"72px",
-            borderRadius:"24px"
+            marginBottom: "72px",
+            borderRadius: "24px"
           }}
         >
           <div style={{ flex: '1' }}>

@@ -1348,7 +1348,7 @@ const CartReview = ({
                 {/* Product Image */}
                 <div className="product-image-wrapper">
                   <img
-                    src={`https://python.krabo.gold${item?.product?.image}`}
+                    src={`${item?.product?.image}`}
                     alt="Product Image"
                     className="product-image"
                   />

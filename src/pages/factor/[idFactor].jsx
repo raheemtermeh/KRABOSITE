@@ -46,11 +46,6 @@ function Factor({ header }) {
         { headers },
       );
 
-      console.log(
-        "FACTOR FULL RESPONSE:",
-        JSON.stringify(response.data, null, 2),
-      );
-
       if (response.status === 200) {
         setMyFactor(response);
       }

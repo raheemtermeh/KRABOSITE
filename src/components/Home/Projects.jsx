@@ -80,7 +80,7 @@ const Projects = ({ banner, boxNumber }) => {
                         >
                           <a className="img img-cover">
                             <img
-                              src={`https://python.krabo.gold/${banner.image}`}
+                              src={`${banner.image}`}
                               alt={banner?.name}
                               style={{ width: "100%", height: "auto" }}
                             />

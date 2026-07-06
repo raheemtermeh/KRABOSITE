@@ -184,7 +184,6 @@ export async function getServerSideProps(context) {
       success: true,
       data: headerData,
     };
-    console.log("Header data structure:", JSON.stringify(headerData, null, 2));
   } catch (error) {
     console.error("Header fetch error:", error.message);
     header = {
@@ -223,7 +222,6 @@ export async function getServerSideProps(context) {
     if (size__lte) apiUrl += `&properties__size__lte=${size__lte}`;
     if (event_list) apiUrl += `&event_list__in=${event_list}`;
 
-    console.log("API URL:", apiUrl);
 
     const { data } = await axios.get(apiUrl, { timeout: 15000 });
 

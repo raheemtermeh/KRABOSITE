@@ -38,12 +38,10 @@ export default function Redirect() {
     const urlValue = urlObj.searchParams.get("url");
     if (whereValue) {
       localStorage.setItem("where", whereValue);
-      console.log(`Value saved to localStorage: ${whereValue}`);
 
       add_log(whereValue, urlValue);
       // window.location.href = `https://krabo.gold/${urlValue}`;
     } else {
-      console.log("where parameter not found in the URL");
       window.location.href = "https://krabo.gold/error";
     }
   }, []);

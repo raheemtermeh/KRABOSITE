@@ -20,8 +20,6 @@ const Filter = ({
   size__gte,
   path,
 }) => {
-  console.log("Filter rendered at:", new Date().toLocaleTimeString());
-  console.log("Product setting:", product?.data?.setting);
 
   const router = useRouter();
   const [priceRange, setPriceRange] = useState([0, 0]);
@@ -60,8 +58,6 @@ const Filter = ({
       ? Number(maxSizeFromApi)
       : DEFAULT_MAX_SIZE;
 
-  console.log("Weight min/max from API:", MIN_WEIGHT, MAX_WEIGHT);
-  console.log("Size min/max from API:", MIN_SIZE, MAX_SIZE);
 
   // مقداردهی اولیه
   useEffect(() => {
@@ -97,9 +93,6 @@ const Filter = ({
       lteSize = Math.max(MIN_SIZE, Math.min(MAX_SIZE, lteSize));
       if (gteSize > lteSize) [gteSize, lteSize] = [lteSize, gteSize];
 
-      console.log("Price range:", [gtePrice, ltePrice]);
-      console.log("Weight range:", [gteWeight, lteWeight]);
-      console.log("Size range:", [gteSize, lteSize]);
 
       setPriceRange([gtePrice, ltePrice]);
       setWeightRange([gteWeight, lteWeight]);
@@ -169,7 +162,6 @@ const Filter = ({
 
     const queryString = params.toString();
     const newUrl = `${path}${queryString ? `?${queryString}` : ""}`;
-    console.log("Navigating to:", newUrl);
     router.push(newUrl);
   }, [priceRange, weightRange, sizeRange, Event, product, path, router]);
 

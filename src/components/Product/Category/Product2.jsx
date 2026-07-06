@@ -35,7 +35,7 @@ const Product = ({ product }) => {
           {/* بخش تصویر */}
           <div className="relative overflow-hidden bg-[#faf6f0]">
             <img
-              src={`https://python.krabo.gold${product.image}`}
+              src={`${product.image}`}
               alt={product.name}
               className="w-full aspect-square object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-95"
             />
