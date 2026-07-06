@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import enamadimg from "../../../public/Linkssets/img/enamad.png";
-import samandehi from "../../../public/Linkssets/img/samandehi-badge.png";
-import paymentimg from "../../../public/Linkssets/img/payment-badge.png";
+import enamadimg from "../../../public/assets/img/enamad.png";
+import samandehi from "../../../public/assets/img/samandehi-badge.png";
+import paymentimg from "../../../public/assets/img/payment-badge.png";
 const Footer = ({ noWave, rtl }) => {
   const handleMouseMove = (event) => {
     const dropDownToggler = event.target.classList.contains("dropdown-toggle")
