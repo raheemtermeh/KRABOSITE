@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useEffect } from "react";
-import enamadimg from "../../../public/assets/img/enamad.png";
-import samandehi from "../../../public/assets/img/samandehi-badge.png";
-import paymentimg from "../../../public/assets/img/payment-badge.png";
-
+import enamadimg from "../../../public/Linkssets/img/enamad.png";
+import samandehi from "../../../public/Linkssets/img/samandehi-badge.png";
+import paymentimg from "../../../public/Linkssets/img/payment-badge.png";
+import Link from "next/link";
 const Footer = ({ noWave, rtl }) => {
   const handleMouseMove = (event) => {
     const dropDownToggler = event.target.classList.contains("dropdown-toggle")
@@ -441,20 +441,20 @@ const Footer = ({ noWave, rtl }) => {
                 </h3>
                 <ul className="list-none p-0 m-0">
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="#"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       اطلاعات شخصی من
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="#"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       سفارشات من
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -466,52 +466,52 @@ const Footer = ({ noWave, rtl }) => {
                 </h3>
                 <ul className="list-none p-0 m-0">
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="/contactUs"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       تماس با ما
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
-                      href="/aboutUs"
+                    <Link
+                      href="/LinkboutUs"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       آشنایی با کرابو{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="#"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       رهگیری مرسولات پستی
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="/rules"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       قوانین و مقررات
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="/questions"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       سوالات متداول
-                    </a>
+                    </Link>
                   </li>
                   <li className="mb-[15px] text-right max-md:text-center">
-                    <a
+                    <Link
                       href="#"
                       className="text-white/95 no-underline text-[24px] transition-all duration-300 inline-block hover:text-white hover:-translate-x-[5px] footer-link"
                     >
                       ثبت شکایات
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
